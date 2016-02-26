@@ -1,6 +1,4 @@
-<?php include("sesh.php");?>
-<?php if (checkAuth(true) != "") { ?>
-<?php include 'menu.php';?>
+
 <?php
  
 	
@@ -85,3 +83,4 @@ else{
   </div>
  </body>
 </html>
+<?php }?>
