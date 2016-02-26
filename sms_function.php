@@ -1,4 +1,6 @@
-
+<?php include("sesh.php");?>
+<?php if (checkAuth(true) != "") { ?>
+<?php include 'menu.php';?>
 <?php
  
 	
