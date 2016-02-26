@@ -1,0 +1,111 @@
+.bg-1 {
+	color: #37474f;
+}
+
+.button {
+	min-width: 80px;
+	max-width: 2000px;
+	display: inline-block;
+	padding: 10px 12px;
+	border: none;
+	background: none;
+	color: #ffa500;
+	text-decoration: none;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	margin: 5px;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+.button:focus {
+	outline: none;
+}
+.button > span {
+	vertical-align: middle;
+}
+
+.bg-1 .button {
+	color: 	#ffa500;
+	border-color: #ffa500;
+}
+
+.button--size-s { /*for buttons that go ontop of a background*/
+	font-size: 1em;
+	/*background-color: rgba(51, 51, 51, 0.3);*/
+}
+.button--size-m {
+	font-size: 3em;
+}
+.button--size-l {
+	font-size: 6em;
+}
+
+.button--text-upper {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.button--text-thin {
+	font-weight: 100;
+}
+.button--text-medium {
+	font-weight: 500;
+}
+.button--text-thick {
+	font-weight: 600;
+	font-family: arial,helvetica;
+}
+
+.button--border-thin {
+	border: 4px solid;
+}
+.button--border-medium {
+	border: 5px solid;
+}
+.button--border-thick {
+	border: 6px solid;
+}
+
+.button--ujarak {
+	-webkit-transition: border-color 0.4s, color 0.4s;
+	transition: border-color 0.4s, color 0.4s;
+}
+.button--ujarak::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ff8c00;
+	z-index: -1;
+	opacity: 0;
+	-webkit-transform: scale3d(0.7, 1, 1);
+	transform: scale3d(0.7, 1, 1);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: transform 0.4s, opacity 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	color: ;
+	text-decoration: none;	
+}
+.button--ujarak.button--round-s::before {
+	border-radius: 2px;
+}
+.button--ujarak.button--inverted::before {
+	background: #ff8c00;
+}
+.button--ujarak,
+.button--ujarak::before {
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--ujarak:hover {
+	color: #ffffff;
+	border-color: none;
+}
+.button--ujarak:hover::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
