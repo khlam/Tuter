@@ -1,5 +1,4 @@
-<?php include("sesh.php");
-?>
+<?php include("sesh.php");?>
 <html>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <body>
@@ -23,28 +22,22 @@
 	where uname='$onidid'");
 	mysqli_close($conn);
 	
+	include("connect.php");
+	$onidid= $_SESSION["onidid"] ;
+	$phil= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
+	$result = mysqli_fetch_array($phil);
+	if($result['fname'] && $result['lname'] && $result['cstanding']){
+		echo $result['fname'];
+		echo (", your info was succesfully uploaded to our Database!");
+		echo ("<br>Redirecting you home now...");
+		?>
+		<META http-equiv="refresh" content="2;URL=http://web.engr.oregonstate.edu/~wingarlo/tuter.php">
+	<?php }
+		else{
+			echo ("There was an error updating your info. Please resubmit your form.");
+		}	
+	mysqli_close($conn);
 	?>
-onid-id: <?php echo $onidid; ?> <br>
-Welcome <?php echo $_POST["fn"]; ?><br>
-Your Last name is: <?php echo $_POST["ln"]; ?><br>
-Your Birthdate: <?php echo $_POST["birthday"]; ?><br>
-<?php
-if(empty($_POST['stb'])){
-	echo("You did not select Student or Tutor");
-}
-else{
-	echo "You are a ";
-	$phil=0;
-   foreach($_POST['stb'] as $check) {
-            if($phil){
-				echo(" and a ");
-			}
-			echo $check;
-			$phil++;
-	 }
-}
-?>
-<br>Year: <?php echo $_POST["year"]; ?><br>
 	<?php } ?>
 
 	</body>
