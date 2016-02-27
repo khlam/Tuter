@@ -1054,6 +1054,7 @@ p {
 
 body,html {
     height: 100%;
+    width: 100%
 }
 
 body {
@@ -1378,9 +1379,6 @@ body .success-text {
     top: 420px;
 }
 
-#net,#pi {
-    position: fixed;
-}
 
 @media (min-width:640px) {
     body .top-ribbon {
@@ -1413,11 +1411,6 @@ body .success-text {
     font-size: 30px;
 }
 
-#index-wrap>section .illustration {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
 
 #index-wrap>.container {
     padding-top: 50px;
@@ -1559,8 +1552,14 @@ body .success-text {
 
 #index-wrap #for-you {
     padding: 100px 0;
-    background-color: #8e2c1f;
-    background-size: 120%;
+    background: url(../images/header_kelly.png) no-repeat 50% 50% fixed; 
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    z-index: 0;
+    overflow: hidden;
+    min-height: 100%;
 }
 
 #index-wrap #for-you p{
@@ -1593,14 +1592,6 @@ body .success-text {
     background-size: 120%;
 }
 
-#index-wrap #profile-edit-header{
-    padding: 50px;
-    background-color: #FAFAD2;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 120%;
-}
-
 #index-wrap #page p{
     font-size: 30px;
     color: #696969;
@@ -1609,9 +1600,32 @@ body .success-text {
     text-align: left;
 }
 
+#index-wrap #page-profile{
+    padding: 20px 0;
+    background-color: #003366;
+    background-image: url(#);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#index-wrap #profile-edit-header{
+    padding: 50px;
+    background: linear-gradient(175deg, #c6e2ff 200px, #003366 0);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#index-wrap #page-profile p{
+    font-size: 30px;
+    color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: left;
+}
+
 #index-wrap #profile-edit-header h1{
     font-size: 80px;
-    color: #696969;
+    color: white;
     float:left;
     position: center;
     
