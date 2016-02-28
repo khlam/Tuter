@@ -64,7 +64,7 @@
 	mysqli_close($conn);
 	?>
 	
-		<META http-equiv="refresh" content="2;URL=http://web.engr.oregonstate.edu/~wingarlo/test_login.php">
+		<META http-equiv="refresh" content="2;URL=http://web.engr.oregonstate.edu/~lamki/tuter/test_login.php">
 	<?php } ?>
 
 	</body>
