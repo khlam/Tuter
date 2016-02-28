@@ -5,6 +5,8 @@
  *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
  body,figure {
     margin: 0;
+    height: 100%
+    width: 100%;
 }
 
 td,th {
@@ -1602,7 +1604,7 @@ body .success-text {
 
 #index-wrap #page-profile{
     padding: 20px 0;
-    background-color: #003366;
+    background-color: white;
     background-image: url(#);
     background-position: center;
     background-repeat: no-repeat;
@@ -1610,14 +1612,14 @@ body .success-text {
 
 #index-wrap #profile-edit-header{
     padding: 50px;
-    background: linear-gradient(175deg, #c6e2ff 200px, #003366 0);
+    background: #E8E8E8;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #index-wrap #page-profile p{
     font-size: 30px;
-    color: white;
+    color: #696969;
     margin-left: 20%;
     margin-right: 20%;
     text-align: left;
@@ -1625,7 +1627,7 @@ body .success-text {
 
 #index-wrap #profile-edit-header h1{
     font-size: 80px;
-    color: white;
+    color: #696969;
     float:left;
     position: center;
     
