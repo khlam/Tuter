@@ -54,15 +54,17 @@
 	if($result['fname'] && $result['lname'] && $result['cstanding']){
 		echo $result['fname'];
 		echo (", your info was succesfully uploaded to our Database!");
-		echo ("<br>Redirecting you home now...");
+		echo ("<br>Redirecting you now...");
 		?>
-		<META http-equiv="refresh" content="2;URL=http://web.engr.oregonstate.edu/~wingarlo/tuter.php">
 	<?php }
 		else{
 			echo ("There was an error updating your info. Please resubmit your form.");
 		}	
+		
 	mysqli_close($conn);
 	?>
+	
+		<META http-equiv="refresh" content="2;URL=http://web.engr.oregonstate.edu/~wingarlo/test_login.php">
 	<?php } ?>
 
 	</body>
