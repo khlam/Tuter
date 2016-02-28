@@ -16,7 +16,7 @@
 		if (checkAuth(true) != "") {
 	?>
 
-<<<<<<< HEAD
+
 	<?php include("sesh.php");?>
 		<?php 
 			if (checkAuth(true) != "") {
@@ -29,7 +29,7 @@
 				$result = mysqli_fetch_array($fn);
 
 		?>
-=======
+
 	<?php 	
 			include("connect.php");
 			$onidid= $_SESSION["onidid"] ;
@@ -39,7 +39,7 @@
 	?>
 
 <body class="desktop">
->>>>>>> origin/master
+
 
 <?php include 'menu.php';?>
 <?php 
@@ -47,7 +47,7 @@
 ?>
 <button class="menu-button" id="open-button"></button>
 
-<<<<<<< HEAD
+
 <div class="content-wrap">
 	<div class = "content">
 	<div id="index-wrap">
@@ -114,7 +114,7 @@
 		</section>
 
 		</div>
-=======
+
 	<div class="content-wrap">
 		<div class = "content">
 			<div id="index-wrap">
@@ -205,7 +205,7 @@
 					</p>
 				</div>
 			</div>	
->>>>>>> origin/master
+
 	</div>
 </div>
 		<script src="source/menu_class.js"></script>
