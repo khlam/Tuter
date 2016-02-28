@@ -149,15 +149,13 @@
 						<div class = "panel panel-default">
 							<div class = "panel-body">
 							<p>
-								This year I am a </br>
-								<select name="year">
-								<option <?php if($result['cstanding']==1){?> selected="selected"<?php } ?> value="1">Freshman</option>
-								<option <?php if($result['cstanding']==2){?> selected="selected"<?php } ?> value="2">Sophomore</option>
-								<option <?php if($result['cstanding']==3){?> selected="selected"<?php } ?> value="3">Junior</option>
-								<option <?php if($result['cstanding']==4){?> selected="selected"<?php } ?> value="4">Senior</option>
-								<option <?php if($result['cstanding']==5){?> selected="selected"<?php } ?> value="5">Grad Student</option>
-								<option <?php if($result['cstanding']==6){?> selected="selected"<?php } ?> value="6">Other</option>
-								</select>		
+								I am a
+								<input type="radio" name="year" value="1" <?php if($result['cstanding']==1){echo 'checked';}?>>Freshman 
+								<input type="radio" name="year" value="2" <?php if($result['cstanding']==2){echo 'checked';}?>>Sophomore 
+								<input type="radio" name="year" value="3" <?php if($result['cstanding']==3){echo 'checked';}?>>Junior 
+								<input type="radio" name="year" value="4" <?php if($result['cstanding']==4){echo 'checked';}?>>Senior 
+								<input type="radio" name="year" value="5" <?php if($result['cstanding']==5){echo 'checked';}?>>Grad student 
+								<input type="radio" name="year" value="6" <?php if($result['cstanding']==6){echo 'checked';}?>>Other
 							</p>
 
 							<p>
