@@ -11,10 +11,10 @@
 	$onidid= $_SESSION["onidid"] ;
 	//echo("Connected to the DB. Updating info...");
 	echo ("<br>");
-	$fstnm=$_POST["fn"];
-	$lstnm=$_POST["ln"];
+	$fstnm= htmlspecialchars($_REQUEST["fn"], ENT_QUOTES);
+	$lstnm= htmlspecialchars($_REQUEST["ln"], ENT_QUOTES);
 	$standing=$_POST["year"];
-	$phone=$_POST["phn"];
+	$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
 	$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum)
 	values('$onidid','$fstnm','$lstnm','$standing','$phone')");
 	$conn->query("update pinfo
@@ -64,7 +64,7 @@
 	mysqli_close($conn);
 	?>
 	
-		<META http-equiv="refresh" content="2;URL=http://web.engr.oregonstate.edu/~lamki/tuter/test_login.php">
+		<META http-equiv="refresh" content="2;URL=test_login.php">
 	<?php } ?>
 
 	</body>
