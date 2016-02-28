@@ -11,10 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="source/bootstrap.css">
 </head>
 
-<?php include("sesh.php");?>
-	<?php 
-		if (checkAuth(true) != "") {
-	?>
 
 
 	<?php include("sesh.php");?>
@@ -30,13 +26,6 @@
 
 		?>
 
-	<?php 	
-			include("connect.php");
-			$onidid= $_SESSION["onidid"] ;
-			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
-			$result = mysqli_fetch_array($fn);
-
-	?>
 
 <body class="desktop">
 
