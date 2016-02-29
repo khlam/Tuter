@@ -1,6 +1,4 @@
-<?php include("sesh.php");?>
-<?php if (checkAuth(true) != "") { ?>
-<?php include 'menu.php';?>
+
 <?php
  
 	
@@ -21,14 +19,22 @@
   		print 'Please fill in all fields. ';
    }
 	}	
-
-if($captcha){ 
- $check = @mail( $to, '', $message . " " . $custom_msg );
- print 'Message was sent to ' . $to;
- } 	
-else{
-	print 'Check the captcha!';
+if(isset($_REQUEST['cbox'])){
+	if($captcha){ 
+		$check = @mail( $to, '', $message . " " . $custom_msg );
+	}
+	else{
+		print 'Please check the captcha';
+	}
 }
+else{
+	$check = @mail( $to, '', $message . " " . $custom_msg );	
+}
+
+
+ 
+ 	
+
 
 
 
@@ -64,7 +70,7 @@ else{
       </li>
 	<li>
 	<label for="cbox">
-		<input type="checkbox" id="cbox" onclick="ShowHide(this)" />
+		<input type="checkbox" id="cbox" onclick="ShowHide(this)" name="cbox" />
 		Attach custom message
 	</label>
 	</li>
@@ -85,4 +91,3 @@ else{
   </div>
  </body>
 </html>
-<?php }?>
