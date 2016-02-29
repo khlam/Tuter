@@ -63,8 +63,7 @@
 		
 	mysqli_close($conn);
 	?>
-	
-		<META http-equiv="refresh" content="2;URL=test_login.php">
+		<META http-equiv="refresh" content="2;URL=edit_profile.php">
 	<?php } ?>
 
 	</body>

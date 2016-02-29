@@ -3,7 +3,7 @@
     echo '
 <div class="menu-wrap">
 	<div class="hover_img">
-		<a href="test_login.php"><span><img src="" alt="Edit Profile" height="50" /></span>
+		<a href="edit_profile.php"><span><img src="" alt="Edit Profile" height="50" /></span>
 			<nav class="menu-top">
 				<div class="profile"><img src="images/profile_default.gif" alt="profile img here" height = "75" width = "75"/>';
 				echo $firstname;

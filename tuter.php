@@ -41,7 +41,7 @@
   </head>
 <body class="desktop">
       <header id="main-header">
-  		<a href="test_login.php"><button class="button button--ujarak button--size-s button--border-thin button--text-thick">Login</button></a>
+  		<a href="landing.php"><button class="button button--ujarak button--size-s button--border-thin button--text-thick">Login</button></a>
       
       </header>
 
@@ -53,7 +53,7 @@
 
 
     <section>
-    	<a href="test_login.php"><button class="button button--ujarak button--size-m button--border-medium button--text-thick">sign up</button></a>
+    	<a href="landing.php"><button class="button button--ujarak button--size-m button--border-medium button--text-thick">sign up</button></a>
         </br><p>Let's see what we can accomplish, together.</p>
     </section>
 
@@ -92,7 +92,7 @@
     <section id="for-you">
       <div class="container">
           <p1> <h1>for <div class= "boxed--emph">you.</div></h1></br>
-          <a href="test_login.php"><button class="button button--ujarak button--size-m button--border-medium button--text-thick">sign up</button></a> </p1>
+          <a href="landing.php"><button class="button button--ujarak button--size-m button--border-medium button--text-thick">sign up</button></a> </p1>
         <p>For the dreamers. For the ones who stay up late studying and for the ones who won't stop until the job is done. <br><br> Whether you are an educator or a student, an engineer or an artist, an undergrad or a senior, tüter welcomes you. <br><br>Let's see what we can accomplish, together.</p>
       </div>
     </section>
