@@ -92,8 +92,10 @@
 									<div class = "panel-body">
 										<p>
 										Send me sms notifications at  
-										<input type="text" class="form-control" name="phn" value=<?php echo $result['phonenum']?> placeholder="### #### ###">
-										<!-- <input type="tel" maxlength="10"  name="phn" value=<?php echo $result['phonenum']?>><br><br>-->
+										<input type="text" class="form-control" name="phn" value=<?php echo $result['phonenum']?>> 
+										<!--
+										<input type="tel" maxlength="10"  name="phn" value=<?php echo $result['phonenum']?>>-->
+										
 										</p>
 									</div>
 								</div>
