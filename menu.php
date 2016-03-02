@@ -4,7 +4,15 @@
 <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                	<a href = "edit_profile.php"<div class="profile"><img src="images/profile_default.gif" alt="profile img here" height = "75" width = "75"/>  </a>';
+                	<a href = "edit_profile.php"
+                	<div class="profile">
+                	<div class = "card">
+                	<img src="images/profile_default.gif" alt="profile img here" height = "150" width = "150"/> 
+                	<div class ="card_content"> 
+                	<p>Edit Profile</p>
+                	</div>
+                	</a>
+                	</div>';
 				echo $firstname;
 				echo ' ';
 				echo $lastname;

@@ -34,7 +34,7 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 450px;
 }
 
 #page-content-wrapper {
@@ -53,7 +53,7 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 450px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -82,9 +82,10 @@
 }
 
 .sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
+    height: 50%;
+    font-size: 40px;
     line-height: 60px;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -98,7 +99,7 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: 350px;
     }
 
     #wrapper.toggled {
@@ -106,7 +107,7 @@
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 350px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -123,3 +124,27 @@
         margin-right: 0;
     }
 }
+
+
+.card {
+  overflow: hidden;
+  position: relative;
+}
+
+.card_content {
+  background-color: rgba(0,0,0,0.1);
+  padding: 0px;
+  position: absolute;
+  bottom: -193px;
+  
+  transition: all 0.2s ease;
+}
+
+.card_content h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.card:hover .card_content {
+  background-color: orange;
+  bottom: 0;
