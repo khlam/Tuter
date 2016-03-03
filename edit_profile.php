@@ -52,7 +52,7 @@
 										</p>
 										<p>
 											Upload Profile Picture  </p> 
-		    								<input type="file" id="exampleInputFile">
+		    								<input type="file" name= "pic" id="pic" accept="image/*>
 										
 									</div>
 								</div>
