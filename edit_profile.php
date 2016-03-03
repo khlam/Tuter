@@ -41,7 +41,7 @@
 							</div>
 						</section>
 					</div>
-						<form action="welcome.php" method="post">
+						<form action="welcome.php" method="post" enctype="multipart/form-data">
 							<div class="col-md-4 ">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
