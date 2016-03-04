@@ -15,8 +15,6 @@
 	$standing=$_POST["year"];
 	$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
 	$desc= htmlspecialchars($_REQUEST["description"], ENT_QUOTES);
-	echo $desc;
-	echo "<br>";
 	if(mkdir("./userfolders/$onidid",0777,true)){
 		echo("directory should be made");
 	}
