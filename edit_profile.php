@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -6,7 +6,7 @@
 	<title>tüter</title>	
 	<link rel="stylesheet" type="text/css" href="source/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="source/sidebar.css">
-	<link rel="stylesheet" type="text/css" href="source/tb.css" >
+	<link rel="stylesheet" type="text/css" href="source/tb.css" />
 	<link rel="stylesheet" type="text/css" href="source/buttons.css">
 </head>
 
@@ -20,11 +20,8 @@
 			$onidid= $_SESSION["onidid"] ;
 			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
 			$result = mysqli_fetch_array($fn);
+
 	?>
-
-
-
-
 
 <body class="desktop">
 	<div id="wrapper">
@@ -44,7 +41,7 @@
 							</div>
 						</section>
 					</div>
-						<form action="welcome.php" method="post">
+						<form action="welcome.php" method="post" enctype="multipart/form-data">
 							<div class="col-md-4 ">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
@@ -55,7 +52,7 @@
 										</p>
 										<p>
 											Upload Profile Picture  </p> 
-		    								<input type="file" id="exampleInputFile">
+		    								<input type="file" name= "pic" id="pic" accept="image/*>
 										
 									</div>
 								</div>
@@ -90,35 +87,28 @@
 								</div>
 							</div>	  
 
-							
-
-							
-
-							<div class="col-md-3 ">
+							<div class="col-md-6 ">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
 										<p>
 										Send me sms notifications at  
-										<input type="text" class="form-control" name="phn" value=<?php echo $result['phonenum']?> placeholder="### #### ###">
-										<!-- <input type="tel" maxlength="10"  name="phn" value=<?php echo $result['phonenum']?>><br><br>-->
+										<input type="text" class="form-control" name="phn" value=<?php echo $result['phonenum']?>> 
+										<!--
+										<input type="tel" maxlength="10"  name="phn" value=<?php echo $result['phonenum']?>>-->
 										
 										</p>
-										<p>
-										Carrier
-										<select name = "carrier">
-  										   <option value="vrzn">Verizon</option>
- 										   <option value="at">AT&T</option>
-  										   <option value="tmob">T-Mobile</option>
-  										   <option value="sprint">Sprint</option>
-										</select>
-									
+									</div>
 								</div>
 							</div>	  
 								
 							<div class="col-md-10">
 								<p>
 								Profile Description
-									<textarea class="form-control" rows="10"> </textarea>
+									<?php $myfile = fopen("./userfolders/$onidid/description.txt","r"); 
+									$text = fgets($myfile);
+									?>
+									<textarea class="form-control" rows="10" name = "description" id="description"><?php echo $text; ?></textarea>
+									<?php fclose($myfile); ?>
 								</p>
 							</div>		
 

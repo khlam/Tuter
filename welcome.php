@@ -9,13 +9,14 @@
 	include("connect.php");
 	
 	$onidid= $_SESSION["onidid"] ;
-	//echo("Connected to the DB. Updating info...");
 	echo ("<br>");
 	$fstnm= htmlspecialchars($_REQUEST["fn"], ENT_QUOTES);
 	$lstnm= htmlspecialchars($_REQUEST["ln"], ENT_QUOTES);
 	$standing=$_POST["year"];
 	$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
-	
+	$desc= htmlspecialchars($_REQUEST["description"], ENT_QUOTES);
+	echo $desc;
+	echo "<br>";
 	if(mkdir("./userfolders/$onidid",0777,true)){
 		echo("directory should be made");
 	}
@@ -36,11 +37,19 @@
 		$imagetemp = $_FILES["pic"]["tmp_name"];
 		//The path you wish to upload the image to
 		$imagePath = "userfolders/$onidid/";
-		$target_file = $imagePath . basename($_FILES["pic"]["name"]);
+		$target_file = $imagePath . "profilepic." . basename("$imagetype");
+		unlink($imagePath . "profilepic.png");
+		unlink($imagePath . "profilepic.jpg");
+		unlink($imagePath . "profilepic.gif");
+		unlink($imagePath . "profilepic.jpeg");
 		if(move_uploaded_file($imagetemp, $target_file)){
 			echo("succesfully uploaded image");
 			echo "<br>";
 		} 
+		
+		$myfile=fopen("./userfolders/$onidid/description.txt","w");
+		fwrite($myfile,$desc);
+		fclose($myfile);
 		
 		$uploadOk = 0;
 		
@@ -60,7 +69,7 @@
 		
 	mysqli_close($conn);
 	?>
-		<META http-equiv="refresh" content="2;URL=edit_profile.php">
+		<META http-equiv="refresh" content="3;URL=edit_profile.php">
 	<?php } ?>
 
 	</body>
