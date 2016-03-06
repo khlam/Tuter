@@ -8,13 +8,13 @@
 $mysqli = new mysqli("oniddb.cws.oregonstate.edu","sprousem-db","5VQxWlk9SsEPMqP0","sprousem-db");
 
 echo "<table>";
-if ($result = $mysqli->query("select uname,fname,lname,cstanding,ppicaddress,phonenum from pinfo")) {
+if ($result = $mysqli->query("select uname,fname,lname,cstanding,carrier,phonenum from pinfo")) {
 	echo "<tr>";
 	echo "<td> Username </td>";
 	echo "<td> First name </td>";
 	echo "<td> Last name </td>";
     echo "<td> Class Standing </td>";
-    echo "<td> Profile Pic Address </td>";
+    echo "<td> Phone Carrier </td>";
     echo "<td> Phone Number </td>";
     while($obj = $result->fetch_object()){ 
             echo "<tr>";
@@ -22,7 +22,7 @@ if ($result = $mysqli->query("select uname,fname,lname,cstanding,ppicaddress,pho
             echo "<td>".htmlspecialchars($obj->fname)."</td>"; 
             echo "<td>".htmlspecialchars($obj->lname)."</td>";
             echo "<td>".htmlspecialchars($obj->cstanding)."</td>"; 
-            echo "<td>".htmlspecialchars($obj->ppicaddress)."</td>"; 
+            echo "<td>".htmlspecialchars($obj->carrier)."</td>"; 
             echo "<td>".htmlspecialchars($obj->phonenum)."</td>";  
             echo "</tr>";
     } 
