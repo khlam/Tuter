@@ -10,20 +10,35 @@
 	
 	$onidid= $_SESSION["onidid"] ;
 	echo ("<br>");
-	$fstnm= htmlspecialchars($_REQUEST["fn"], ENT_QUOTES);
-	$lstnm= htmlspecialchars($_REQUEST["ln"], ENT_QUOTES);
+	$fstnm= htmlspecialchars($_POST["fn"], ENT_QUOTES);
+	$lstnm= htmlspecialchars($_POST["ln"], ENT_QUOTES);
 	$standing=$_POST["year"];
-	$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
-	$desc= htmlspecialchars($_REQUEST["description"], ENT_QUOTES);
+	$phone= htmlspecialchars($_POST["phn"], ENT_QUOTES);
+	$desc= htmlspecialchars($_POST["description"], ENT_QUOTES);
+	$acc = $_POST["type"];
 	if(mkdir("./userfolders/$onidid",0777,true)){
 		echo("directory should be made");
 	}
+	echo "Here is what is in request: <br>";
+	$temp = serialize($_POST);
+	echo "$temp <br>";
+	if (!$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum,acctyp)
+	values('$onidid','$fstnm','$lstnm','$standing','$phone','$acc')"))
+	{
+			echo 'test1 <BR>';
+			echo $fstnm;
+			echo "<BR>";
+			echo $lstnm;
+			echo "<BR>";
+			echo $standing;
+			echo "<BR>";
+			echo $phone;
+			echo "<BR>";
+			$conn->query("update pinfo
+			set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone', acctyp='$acc'
+			where uname='$onidid'");
+	}
 	
-	$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum)
-	values('$onidid','$fstnm','$lstnm','$standing','$phone')");
-	$conn->query("update pinfo
-	set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone'
-	where uname='$onidid'");
 	mysqli_close($conn);
 	
 	$uploadOk = 1;
@@ -61,7 +76,7 @@
 	$onidid= $_SESSION["onidid"] ;
 	$phil= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
 	$result = mysqli_fetch_array($phil);
-	if($result['fname'] && $result['lname'] && $result['cstanding']){
+	if($result['fname'] != "" && $result['lname'] != "" && $result['cstanding'] != ""){
 		echo $result['fname'];
 		echo (", your info was succesfully uploaded to our Database!");
 		echo ("<br>Redirecting you now...");
@@ -73,7 +88,7 @@
 		
 	mysqli_close($conn);
 	?>
-		<META http-equiv="refresh" content="3;URL=edit_profile.php">
+		<META http-equiv="refresh" content="10;URL=edit_profile.php">
 	<?php } ?>
 
 	</body>

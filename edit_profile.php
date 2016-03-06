@@ -18,8 +18,8 @@
 	<?php 	
 			include("connect.php");
 			$onidid= $_SESSION["onidid"] ;
-			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
-			$result = mysqli_fetch_array($fn);
+			$userInfo= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
+			$result = mysqli_fetch_array($userInfo);
 
 	?>
 
@@ -46,8 +46,8 @@
 								<div class = "panel panel-default">
 									<div class = "panel-body">
 										<p>
-									    	First Name* : <input type="text" name="fn" value=<?php echo $result['fname']?>>
-											</br	>Last Name* : <input type="text" name="ln" value=<?php echo $result['lname']?>>
+									    	First Name* : <input type="text" name="fn" id="fn" value=<?php echo $result['fname']?> required>
+											</br>Last Name* : <input type="text" name="ln" id="ln" value=<?php echo $result['lname']?> required>
 											</br></br>
 										</p>
 										<p>
@@ -62,7 +62,7 @@
 									<div class = "panel-body">
 									<p>
 										I am a
-									<select name="year">
+									<select name="year" id="year">
 										<option <?php if($result['cstanding']==0){?> selected="selected"<?php } ?> value="0"> -select- </option>
 										<option <?php if($result['cstanding']==1){?> selected="selected"<?php } ?> value="1">Freshman</option>
 										<option <?php if($result['cstanding']==2){?> selected="selected"<?php } ?> value="2">Sophomore</option>
@@ -75,7 +75,7 @@
 									</p>
 									<p>
 									Account type
-									<select name="type">
+									<select name="type" id="type" >
 										<option <?php if($result['acctyp']==0){?> selected="selected"<?php } ?> value="0"> -select- </option>
 										<option <?php if($result['acctyp']==1){?> selected="selected"<?php } ?> value="1">Student</option>
 										<option <?php if($result['acctyp']==2){?> selected="selected"<?php } ?> value="2">Tutor</option>
@@ -91,7 +91,7 @@
 									<div class = "panel-body">
 										<p>
 										Send me sms notifications at  
-										<input type="text" class="form-control" name="phn" value=<?php echo $result['phonenum']?>> 
+										<input type="text" class="form-control" name="phn" id="phn" value=<?php echo $result['phonenum']?>> 
 										<!--
 										<input type="tel" maxlength="10"  name="phn" value=<?php echo $result['phonenum']?>>-->
 										
