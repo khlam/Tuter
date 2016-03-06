@@ -42,7 +42,7 @@
 						</section>
 					</div>
 						<form action="welcome.php" method="post" enctype="multipart/form-data">
-							<div class="col-md-4 ">
+							<div class=".col-xs-6 .col-md-4">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
 										<p>
@@ -52,13 +52,12 @@
 										</p>
 										<p>
 											Upload Profile Picture  </p> 
-		    								<input type="file" name= "pic" id="pic" accept="image/*>
-										
+		    								<input type="file" name= "pic" id="pic" accept="image/*">
 									</div>
 								</div>
 							</div>
 
-							<div class="col-md-3 ">
+							<div class=".col-xs-6 .col-md-4">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
 									<p>
@@ -87,7 +86,7 @@
 								</div>
 							</div>	  
 
-							<div class="col-md-6 ">
+							<div class=".col-xs-6 .col-md-4">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
 										<p>
@@ -101,7 +100,7 @@
 								</div>
 							</div>	  
 								
-							<div class="col-md-10">
+							<div class=".col-xs-6 .col-md-4">
 								<p>
 								Profile Description
 									<?php $myfile = fopen("./userfolders/$onidid/description.txt","r"); 
