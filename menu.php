@@ -10,23 +10,23 @@
                 	<div class="profile">
                 		<div class = "card">
                 			<?php if (file_exists("userfolders/$onidid/profilepic.gif")){ ?>
-							<img src="userfolders/<?php echo $onidid;?>/profilepic.gif" height = "150" width = "150"/>  </a>
+							<img src="userfolders/<?php echo $onidid;?>/profilepic.gif" height = "150" width = "150" class="img-circle"/>  </a>
 							<?php $phil = 1;
 							} ?>
 							<?php if (file_exists("userfolders/$onidid/profilepic.jpeg")){ ?>
-							<img src="userfolders/<?php echo $onidid;?>/profilepic.jpeg" height = "150" width = "150"/>  </a>
+							<img src="userfolders/<?php echo $onidid;?>/profilepic.jpeg" height = "150" width = "150" class="img-circle"/>  </a>
 							<?php $phil = 1;
 							} ?>
 							<?php if (file_exists("userfolders/$onidid/profilepic.jpg")){ ?>
-							<img src="userfolders/<?php echo $onidid;?>/profilepic.jpg" height = "150" width = "150"/>  </a>
+							<img src="userfolders/<?php echo $onidid;?>/profilepic.jpg" height = "150" width = "150" class="img-circle"/>  </a>
 							<?php $phil = 1;
 							} ?>
 							<?php if (file_exists("userfolders/$onidid/profilepic.png")){ ?>
-							<img src="userfolders/<?php echo $onidid;?>/profilepic.png" height = "150" width = "150"/>  </a>
+							<img src="userfolders/<?php echo $onidid;?>/profilepic.png" height = "150" width = "150" class="img-circle"/>  </a>
 							<?php $phil = 1;
 							} 
 							if ($phil==0){ ?>
-							<img src="images/profile_default.gif" height = "150" width = "150"/>  </a>
+							<img src="images/profile_default.gif" height = "150" width = "150" class="img-circle"/>  </a>
 							<?php } ?> 
 	                	<div class ="card_content"> 
 	                		<p><a href = "edit_profile.php">Edit Profile</a></p>
@@ -46,7 +46,7 @@
                 <li>
                     <a href="landing.php">Home</a>
                 </li>
-             
+
                 <li>
                     <a href="#">LOGOUT</a>
                 </li>
