@@ -96,6 +96,17 @@
 										<input type="tel" maxlength="10"  name="phn" value=<?php echo $result['phonenum']?>>-->
 										
 										</p>
+										<p>
+											<select>
+  												<option <?php if($result['carrier']==0){?> selected="selected"<?php } ?> value="1">Verizon</option>
+  												<option <?php if($result['carrier']==1){?> selected="selected"<?php } ?>value="2">AT&T</option>
+  												<option <?php if($result['carrier']==2){?> selected="selected"<?php } ?>value="3">Sprint</option>
+  												<option <?php if($result['carrier']==3){?> selected="selected"<?php } ?>value="4">T-Mobile</option>
+											</select>
+										</p>	
+									
+									
+									
 									</div>
 								</div>
 							</div>	  
