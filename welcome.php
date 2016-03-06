@@ -51,7 +51,7 @@
 		//The path you wish to upload the image to
 		$imagePath = "userfolders/$onidid/";
 		$target_file = $imagePath . "profilepic." . basename("$imagetype");
-		if ($_FILES["fileToUpload"]["size"] <= 500000) {
+		if ($_FILES["pic"]["size"] <= 500000) {
 			unlink($imagePath . "profilepic.png");
 			unlink($imagePath . "profilepic.jpg");
 			unlink($imagePath . "profilepic.gif");
@@ -69,7 +69,6 @@
 		$myfile=fopen("./userfolders/$onidid/description.txt","w");
 		fwrite($myfile,$desc);
 		fclose($myfile);
-		
 		$uploadOk = 0;
 		
 	include("connect.php");
