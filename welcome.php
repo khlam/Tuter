@@ -41,6 +41,7 @@
 		unlink($imagePath . "profilepic.gif");
 		unlink($imagePath . "profilepic.jpeg");
 		if(move_uploaded_file($imagetemp, $target_file)){
+			chmod ($target_file, 0644);
 			echo("succesfully uploaded image");
 			echo "<br>";
 		} 
