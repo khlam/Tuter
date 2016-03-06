@@ -36,15 +36,20 @@
 		//The path you wish to upload the image to
 		$imagePath = "userfolders/$onidid/";
 		$target_file = $imagePath . "profilepic." . basename("$imagetype");
-		unlink($imagePath . "profilepic.png");
-		unlink($imagePath . "profilepic.jpg");
-		unlink($imagePath . "profilepic.gif");
-		unlink($imagePath . "profilepic.jpeg");
-		if(move_uploaded_file($imagetemp, $target_file)){
-			chmod ($target_file, 0644);
-			echo("succesfully uploaded image");
-			echo "<br>";
-		} 
+		if ($_FILES["fileToUpload"]["size"] <= 500000) {
+			unlink($imagePath . "profilepic.png");
+			unlink($imagePath . "profilepic.jpg");
+			unlink($imagePath . "profilepic.gif");
+			unlink($imagePath . "profilepic.jpeg");
+			if(move_uploaded_file($imagetemp, $target_file)){
+				chmod ($target_file, 0644);
+				echo("succesfully uploaded image");
+				echo "<br>";
+			}
+		}
+		else{
+			echo "Sorry, your file is too large.";
+		}
 		
 		$myfile=fopen("./userfolders/$onidid/description.txt","w");
 		fwrite($myfile,$desc);

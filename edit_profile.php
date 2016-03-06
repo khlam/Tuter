@@ -103,8 +103,15 @@
 							<div class=".col-xs-6 .col-md-4">
 								<p>
 								Profile Description
-									<?php $myfile = fopen("./userfolders/$onidid/description.txt","r"); 
+									<?php 
+									if(file_exists("userfolders/$onidid/description.txt")){
+									$myfile = fopen("./userfolders/$onidid/description.txt","r"); 
 									$text = fgets($myfile);
+									}
+									else{
+									$text = "";
+									}
+		
 									?>
 									<textarea class="form-control" rows="10" name = "description" id="description"><?php echo $text; ?></textarea>
 									<?php fclose($myfile); ?>
@@ -115,6 +122,7 @@
 								<button type="submit" name="update" class="button button--ujarak button--size-m button--border-medium button--text-thick">submit</button>
 							</div>						
 						</form>
+						
 
 						<div class = "col-md-8">
 							<p>Your first name, academic year, and profile picture are publicly viewable.
@@ -130,6 +138,7 @@
 	</div>
 			<script src="source/menu_class.js"></script>
 			<script src="source/main_menu.js"></script>
-
+		<?php }
+		mysqli_close($conn); ?>
 </body>
 </html>
