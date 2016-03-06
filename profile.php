@@ -37,7 +37,7 @@
 							<div class = "container">
 								<h1>
 								<img src="images/profile_default.gif" height = "130" width="130" class="img-circle">
-								<div class= "boxed--emph">     <?php echo $result['fname']?>'s</div> profile</h1>
+								<div class= "boxed--emph">     <?php echo $_GET['user']?>'s</div> profile</h1>
 							</div>
 						</section>
 					</div>
