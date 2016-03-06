@@ -35,7 +35,12 @@
                 <li>
                     <a href="landing.php">Home</a>
                 </li>
-
+                <li>
+                    <a href="reader.php">List of Tüters</a>
+                </li>
+                <li>
+                    <a href="sms_function.php">Message a Tüter</a>
+                </li>
                 <li>
                     <a href="#">LOGOUT</a>
                 </li>
