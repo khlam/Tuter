@@ -13,7 +13,14 @@
 	$fstnm= htmlspecialchars($_POST["fn"], ENT_QUOTES);
 	$lstnm= htmlspecialchars($_POST["ln"], ENT_QUOTES);
 	$standing=$_POST["year"];
-	$phone= htmlspecialchars($_POST["phn"], ENT_QUOTES);
+	if(is_numeric($_POST['phn'])){
+					
+		$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
+	}
+	else{
+		echo '<script> alert("Enter valid phone number or leave blank!");</script>';
+		
+	}
 	$desc= htmlspecialchars($_POST["description"], ENT_QUOTES);
 	$acc = $_POST["type"];
 	if(mkdir("./userfolders/$onidid",0777,true)){
