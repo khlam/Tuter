@@ -54,9 +54,9 @@
 									$temp = imageCheck($user);
 									if($temp != "false"){
 									?>
-									<img src="userfolders/<?php echo $user;?>/profilepic<?php echo $temp;?>" height = "150" width = "150" class="img-circle"/>  </a>
+									<img src="userfolders/<?php echo $user;?>/profilepic<?php echo $temp;?>" height = "300" width = "300" class="img-circle"/>  </a>
 									<?php }else{ ?>
-									<img src="images/profile_default.gif" height = "150" width = "150" class="img-circle"/>  </a>
+									<img src="images/profile_default.gif" height = "300" width = "300" class="img-circle"/>  </a>
 									<?php
 									}?>
 									<div class= "boxed--emph"> <?php echo $result['fname'] ?>'s</div> profile</h1>
