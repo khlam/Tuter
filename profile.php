@@ -8,6 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="source/sidebar.css">
 	<link rel="stylesheet" type="text/css" href="source/tb.css" />
 	<link rel="stylesheet" type="text/css" href="source/buttons.css">
+
+	 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 
@@ -67,10 +71,10 @@
 								<h1>I'm a 
 								<?php 
 									if($result['acctyp'] == 2){		
-										echo 'tutor </h1>';
+										echo '<div class= "boxed--emph">tutor</div></h1>';
 									}else
 									{
-										echo'student</h1>';
+										echo'<div class= "boxed--emph">student</div></h1>';
 									}
 								?>
 								
@@ -86,8 +90,14 @@
 						<div class = "panel panel-default">
 							<div class = "panel-body">
 							<section id = "page">
-										<?php
-										echo '<p>Would you like my help? Send me a <a href="#"><button class="button button--ujarak button--size-s button--border-medium button--text-thick">message</button></a></p>';?>
+
+								<p>Would you like my help? Send me a <a href="#"><button class="button button--ujarak button--size-s button--border-medium button--text-thick" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">message</button></a>
+									<div class="collapse" id="collapseExample">
+										<div class="well">
+										Code for cool feature goes here
+										</div>
+									</div>
+								</p>
 							</section>
 							</div>
 						</div>
@@ -102,7 +112,7 @@
 									$text = fgets($myfile);
 									}
 									else{
-									$text = "";
+									$text = "This user has not created a bio to display.";
 									}
 									?>
 									<?php echo $text; ?>
@@ -128,6 +138,7 @@
 	</div>
 			<script src="source/menu_class.js"></script>
 			<script src="source/main_menu.js"></script>
+			<script src="source/bootstrap.js"></script>
 		<?php }
 		mysqli_close($conn); ?>
 </body>
