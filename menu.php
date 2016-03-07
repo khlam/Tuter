@@ -55,6 +55,10 @@
                 </li>
 
                 <li>
+                	<a href="tutors_list.php">Tuters</a>
+                </li>
+
+                <li>
                     <a href="Logout.php">LOGOUT</a>
                 </li>
             </ul>
