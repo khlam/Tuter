@@ -1581,11 +1581,15 @@ body .success-text {
     background-size: 120%;
 }
 
-#index-wrap #page p{
-    font-size: 30px;
+#index-wrap #page h1{
+    font-size: 50px;
+    color: black;
+    text-align: left;
+}
+
+#index-wrap #page h2{
+    font-size: 50px;
     color: #696969;
-    margin-left: 20%;
-    margin-right: 20%;
     text-align: left;
 }
 

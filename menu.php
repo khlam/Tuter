@@ -40,10 +40,7 @@
 	                	</div>
 	                	</div>
                 	</a>
-                	
-           
-
-
+             
 				<?php
 				echo $firstname;
 				echo ' ';
@@ -54,7 +51,10 @@
                     <a href="landing.php">Home</a>
                 </li>
                 <li>
-                	<a href="tutors_list.php">Tuters</a>
+                    <a href="edit_profile.php">Edit Profile</a>
+                </li>
+                <li>
+                	<a href="tuter_list.php">Find a Tüter</a>
                 </li>
                 <li>
                     <a href="Logout.php">LOGOUT</a>

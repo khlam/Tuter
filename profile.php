@@ -91,13 +91,13 @@
 							<div class = "panel-body">
 							<section id = "page">
 
-								<p>Would you like my help? Send me a <a href="#"><button class="button button--ujarak button--size-s button--border-medium button--text-thick" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">message</button></a>
+								<h2>Would you like my help? Send me a <a href="#"><button class="button button--ujarak button--size-s button--border-medium button--text-thick" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">message</button></a>
 									<div class="collapse" id="collapseExample">
 										<div class="well">
 										Code for cool feature goes here
 										</div>
 									</div>
-								</p>
+								</h2>
 							</section>
 							</div>
 						</div>
