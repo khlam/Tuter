@@ -36,7 +36,7 @@
 						<section id = "profile-edit-header">
 							<div class = "container">
 								<h1>
-								<img src="images/profile_default.gif" height = "130" width="130" class="img-circle">
+								<img src="userfolders/<?php echo $onidid;?>/profilepic<?php echo $temp;?>" height = "150" width = "150" class="img-circle"/>  </a>
 								<div class= "boxed--emph">     <?php echo $result['fname']?>'s</div> profile</h1>
 							</div>
 						</section>

@@ -106,7 +106,7 @@ td,th {
     font-family: arial,helvetica;
     font-weight: 200;
     line-height: 1.1;
-    color: inherit;
+    color: #696969;
 }
 
 .h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small {
@@ -1171,19 +1171,6 @@ body>footer section .icon {
     background-size: contain;
 }
 
-body>footer section #fb-icon {
-    background-image: url(../images/icon_fb.png);
-    margin-right: 10px;
-}
-
-body>footer section #tw-icon {
-    background-image: url(../images/icon_tw.png);
-    margin-right: 10px;
-}
-
-body>footer section #gp-icon {
-    background-image: url(../images/icon_gplus.png);
-}
 
 body>footer .sitemap {
     height: 200px;
@@ -1627,6 +1614,14 @@ body .success-text {
 
 #index-wrap #profile-edit-header h1{
     font-size: 80px;
+    color: #696969;
+    float:left;
+    position: center;
+    
+}
+
+#index-wrap #profile-edit-header p{
+    font-size: 40px;
     color: #696969;
     float:left;
     position: center;

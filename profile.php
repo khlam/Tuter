@@ -21,7 +21,7 @@
 			include("connect.php");
 			$user= $_SESSION["onidid"] ;
 			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
-			$result = mysqli_fetch_array($fn);
+			$result_user = mysqli_fetch_array($fn);
 
 	?>
 
@@ -35,36 +35,20 @@
 	<div id="wrapper">
 		<?php include 'menu.php';?>
 		<?php 
-		menu($result['fname'], $result['lname']);
+		menu($result_user['fname'], $result_user['lname']);
 		?>
 		<div id="page-content-wrapper">
 	    	<div class="container-fluid">
 				<div id="index-wrap">
-				<?php if ($result['fname'] != "")
+				<?php $temp = imageCheck($user)?>
+
+				<?php if ($temp != "false")
 						{   ?>
 						<div class="col-md-12">
 							<section id = "profile-edit-header">
 								<div class = "container">
 									<h1>
-									<?php if (file_exists("userfolders/$user/profilepic.gif")){ ?>
-									<img src="userfolders/<?php echo $user;?>/profilepic.gif" height = "150" width = "150" class="img-circle"/>  </a>
-									<?php $phil = 1;
-									} ?>
-									<?php if (file_exists("userfolders/$user/profilepic.jpeg")){ ?>
-									<img src="userfolders/<?php echo $user;?>/profilepic.jpeg" height = "150" width = "150" class="img-circle"/>  </a>
-									<?php $phil = 1;
-									} ?>
-									<?php if (file_exists("userfolders/$user/profilepic.jpg")){ ?>
-									<img src="userfolders/<?php echo $user;?>/profilepic.jpg" height = "150" width = "150" class="img-circle"/>  </a>
-									<?php $phil = 1;
-									} ?>
-									<?php if (file_exists("userfolders/$user/profilepic.png")){ ?>
-									<img src="userfolders/<?php echo $user;?>/profilepic.png" height = "150" width = "150" class="img-circle"/>  </a>
-									<?php $phil = 1;
-									} 
-									if ($phil==0){ ?>
-									<img src="images/profile_default.gif" height = "150" width = "150" class="img-circle"/>  </a>
-									<?php } ?> 
+									<img src="userfolders/<?php echo $user;?>/profilepic<?php echo $temp;?>" height = "150" width = "150" class="img-circle"/>  </a>
 									<div class= "boxed--emph"> <?php echo $result['fname'] ?>'s</div> profile</h1>
 								</div>
 							</section>
