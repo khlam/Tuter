@@ -36,7 +36,15 @@
 						<section id = "profile-edit-header">
 							<div class = "container">
 								<h1>
-								<img src="userfolders/<?php echo $onidid;?>/profilepic<?php echo $temp;?>" height = "150" width = "150" class="img-circle"/>  </a>
+								<?php
+									$temp = imageCheck($onidid);
+									if($temp != "false"){
+									?>
+									<img src="userfolders/<?php echo $onidid;?>/profilepic<?php echo $temp;?>" height = "150" width = "150" class="img-circle"/>  </a>
+									<?php }else{ ?>
+									<img src="images/profile_default.gif" height = "150" width = "150" class="img-circle"/>  </a>
+									<?php
+									}?>
 								<div class= "boxed--emph">     <?php echo $result['fname']?>'s</div> profile</h1>
 							</div>
 						</section>

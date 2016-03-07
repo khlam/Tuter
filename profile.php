@@ -40,15 +40,21 @@
 		<div id="page-content-wrapper">
 	    	<div class="container-fluid">
 				<div id="index-wrap">
-				<?php $temp = imageCheck($user)?>
-
-				<?php if ($temp != "false")
+				<?php if ($result['fname'] != "")
 						{   ?>
 						<div class="col-md-12">
 							<section id = "profile-edit-header">
 								<div class = "container">
 									<h1>
+									<?php
+									$temp = imageCheck($user);
+									if($temp != "false"){
+									?>
 									<img src="userfolders/<?php echo $user;?>/profilepic<?php echo $temp;?>" height = "150" width = "150" class="img-circle"/>  </a>
+									<?php }else{ ?>
+									<img src="images/profile_default.gif" height = "150" width = "150" class="img-circle"/>  </a>
+									<?php
+									}?>
 									<div class= "boxed--emph"> <?php echo $result['fname'] ?>'s</div> profile</h1>
 								</div>
 							</section>
@@ -105,8 +111,8 @@
 						</div>
 					</div>	
 					<?php
-					}else
-					{?>
+					}else{
+						?>
 						<div class="col-md-12">
 							<section id = "profile-edit-header">
 								<div class = "container">
