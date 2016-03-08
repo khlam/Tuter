@@ -94,7 +94,7 @@
 		
 	mysqli_close($conn);
 	?>
-		<META http-equiv="refresh" content="10;URL=edit_profile.php">
+		<META http-equiv="refresh" content="3;URL=edit_profile.php">
 	<?php } ?>
 
 	</body>

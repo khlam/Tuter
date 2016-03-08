@@ -19,7 +19,7 @@
 			include("connect.php");
 			$onidid= $_SESSION["onidid"] ;
 			$userInfo= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
-			$result = mysqli_fetch_array($userInfo);
+			$result = $userInfo->fetch_assoc();
 
 	?>
 
@@ -112,7 +112,6 @@
   												<option <?php if($result['carrier']==3){?> selected="selected"<?php } ?>value="4">T-Mobile</option>
 											</select>
 										</p>	
-									
 									
 									
 									</div>
