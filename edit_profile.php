@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include("sesh.php");?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -10,7 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="source/buttons.css">
 </head>
 
-<?php include("sesh.php");?>
 	<?php 
 		if (checkAuth(true) != "") {
 	?>
@@ -156,7 +156,9 @@
 	</div>
 			<script src="source/menu_class.js"></script>
 			<script src="source/main_menu.js"></script>
-		<?php }
-		mysqli_close($conn); ?>
+		<?php 
+		
+		mysqli_close($conn); 
+		}?>
 </body>
 </html>
