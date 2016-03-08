@@ -64,8 +64,9 @@
 </div>
 		<script src="source/menu_class.js"></script>
 		<script src="source/main_menu.js"></script>
-		<?php }else{echo("please log in again");}
-		?>
+		<?php }else{ ?>
+		<META http-equiv="refresh" content="0;URL=generic.php">
+		<?php } ?>
 		<?php mysqli_close($conn); ?>
 </body>
 </html>

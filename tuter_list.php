@@ -107,7 +107,9 @@
 									echo "</td>";
 									mysqli_close($mysqli);
 									?>
-									<?php }?>
+									<?php }else{ ?>
+										<META http-equiv="refresh" content="0;URL=tuter_list.php">
+									<?php } ?>
 								</table>
 								
 							</section>

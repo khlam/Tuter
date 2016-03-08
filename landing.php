@@ -63,8 +63,9 @@
 		</div>
 	</div>
 </div>
-		<?php }else{echo("please log in again");}
-		?>
+		<?php }else{ ?>
+		<META http-equiv="refresh" content="0;URL=landing.php">
+		<?php } ?>
 		<?php mysqli_close($conn); ?>
 </body>
 </html>

@@ -139,7 +139,9 @@
 			<script src="source/menu_class.js"></script>
 			<script src="source/main_menu.js"></script>
 			<script src="source/bootstrap.js"></script>
-		<?php }
-		mysqli_close($conn); ?>
+		<?php mysqli_close($conn); 
+		}else{ ?>
+		<META http-equiv="refresh" content="0;URL=profile.php">
+		<?php } ?>
 </body>
 </html>

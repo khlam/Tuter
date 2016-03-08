@@ -159,6 +159,8 @@
 		<?php 
 		
 		mysqli_close($conn); 
-		}?>
+		} else{ ?>
+			<META http-equiv="refresh" content="0;URL=edit_profile.php">
+		<?php } ?>
 </body>
 </html>
