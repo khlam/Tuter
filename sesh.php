@@ -43,7 +43,12 @@
 		}
 		else if($doRedirect){
 			$url = "https://login.oregonstate.edu/cas/login?service=".$pageURL;
-			echo "<script>location.replace('" . $url . "');</script>";
+			if($_SERVER['REQUEST_METHOD'] === 'POST'){
+				return "2";
+			}
+			else{
+				echo "<script>location.replace('" . $url . "');</script>";
+			}
 		}
 		return "";
 	}
