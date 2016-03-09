@@ -59,7 +59,7 @@
 		//The path you wish to upload the image to
 		$imagePath = "userfolders/$onidid/";
 		$target_file = $imagePath . "profilepic." . basename("$imagetype");
-		if(isset($_POST["pic"])){
+		if($imagename){
 			if ($_FILES["pic"]["size"] <= 500000) {
 				unlink($imagePath . "profilepic.png");
 				unlink($imagePath . "profilepic.jpg");
