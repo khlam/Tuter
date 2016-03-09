@@ -23,6 +23,9 @@
 		else{
 			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["SCRIPT_NAME"];
 		}
+		if($_SERVER['REQUEST_METHOD'] === 'GET'){
+				$pageURL .= "?user=".$_GET['user'];
+		}
 		//Create a ticket to send to CAS.
 		$ticket = isset($_REQUEST["ticket"]) ? $_REQUEST["ticket"] : "";;
 		
@@ -45,9 +48,6 @@
 			$url = "https://login.oregonstate.edu/cas/login?service=".$pageURL;
 			if($_SERVER['REQUEST_METHOD'] === 'POST'){
 				return "2";
-			}
-			else if($_SERVER['REQUEST_METHOD'] === 'GET'){
-				return "1";
 			}
 			else{
 				echo "<script>location.replace('" . $url . "');</script>";
