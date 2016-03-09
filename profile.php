@@ -41,15 +41,13 @@
 		<?php 
 		menu($result_user['fname'], $result_user['lname']);
 		?>
-		<div id="page-content-wrapper">
-	    	<div class="container-fluid">
 				<div id="index-wrap">
-				<?php if ($result['fname'] != "")
-						{   ?>
 						<div class="col-md-12">
 							<section id = "profile-edit-header">
 								<div class = "container">
 									<h1>
+									<?php if ($result['fname'] != "")
+									{   ?>
 									<?php
 									$temp = imageCheck($user);
 									if($temp != "false"){
@@ -133,8 +131,6 @@
 						</div>
 					<?php } ?>					
 				</div>
-	    	</div>
-	   	</div>
 	</div>
 			<script src="source/menu_class.js"></script>
 			<script src="source/main_menu.js"></script>

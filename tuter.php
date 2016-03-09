@@ -7,6 +7,7 @@
 
       <link rel="stylesheet" href="source/tb.css">
       <link rel="stylesheet" type="text/css" href="source/buttons.css">
+     <link rel="stylesheet" type="text/css" href="source/bootstrap.css">
       <style>
         body #main-header {
           background-color: transparent;
