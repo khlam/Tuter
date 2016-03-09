@@ -14,6 +14,7 @@
 	$lstnm= htmlspecialchars($_POST["ln"], ENT_QUOTES);
 	$standing=$_POST["year"];
 	$email=htmlspecialchars($_POST["email"], ENT_QUOTES);
+	$carrier=$_POST["carrier"];
 	if(is_numeric($_POST['phn'])){
 		
 		$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
@@ -30,8 +31,8 @@
 	echo "Here is what is in request: <br>";
 	$temp = serialize($_POST);
 	echo "$temp <br>";
-	if (!$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum,acctyp,email)
-	values('$onidid','$fstnm','$lstnm','$standing','$phone','$acc', '$email')"))
+	if (!$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum,acctyp,email,carrier)
+	values('$onidid','$fstnm','$lstnm','$standing','$phone','$acc', '$email', '$carrier')"))
 	{
 			echo 'test1 <BR>';
 			echo $fstnm;
@@ -43,7 +44,7 @@
 			echo $phone;
 			echo "<BR>";
 			$conn->query("update pinfo
-			set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone', acctyp='$acc', email='$email'
+			set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone', acctyp='$acc', email='$email', carrier='$carrier'
 			where uname='$onidid'");
 	}
 	
