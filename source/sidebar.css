@@ -15,7 +15,7 @@
 }
 
 #wrapper.toggled {
-    padding-left: 250px;
+    padding-left: 350px;
 }
 
 #sidebar-wrapper {
@@ -61,7 +61,7 @@
 
 .sidebar-nav li {
     text-indent: 20px;
-    line-height: 40px;
+    line-height: 50px;
 }
 
 .sidebar-nav li a {
@@ -72,8 +72,8 @@
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
+    color: white;
+    background: rgba( 255, 153, 0 ,0.2);
 }
 
 .sidebar-nav li a:active,
@@ -85,6 +85,7 @@
     height: 50%;
     font-size: 40px;
     line-height: 60px;
+    color:white;
     background-color: rgba(255,255,255,0.1);
 }
 
@@ -99,7 +100,7 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 350px;
+        padding-left: 300px;
     }
 
     #wrapper.toggled {
@@ -107,7 +108,7 @@
     }
 
     #sidebar-wrapper {
-        width: 350px;
+        width: 300px;
     }
 
     #wrapper.toggled #sidebar-wrapper {

@@ -598,7 +598,17 @@ body .success-text {
 
 #index-wrap #profile-user{
     padding: 0px;
-    background: transparent;
+    background-image: -ms-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
+
+    background-image: -moz-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
+
+    background-image: -o-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
+
+    background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(0, #FFFFFF), color-stop(100, #F7F7F7));
+
+    background-image: -webkit-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
+
+    background-image: radial-gradient(ellipse closest-corner at center, #FFFFFF 0%, #F7F7F7 100%);
 }
 
 #index-wrap #profile-user h1{

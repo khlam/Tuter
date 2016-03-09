@@ -38,7 +38,7 @@
 	                	<div class ="card_content"> 
 	                		<p><a href = "edit_profile.php">Edit Profile</a></p>
 	                	</div>
-	                	</div>
+	                </div>
                 	</a>
              
 				<?php
