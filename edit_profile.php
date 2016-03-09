@@ -105,16 +105,33 @@
 										
 										</p>
 										<p>
-											<select name ="carrier" id = "carrier">
-  												<option <?php if($result['carrier']==0){?> selected="selected"<?php } ?>value="0">-select-</option>
-  												<option <?php if($result['carrier']==1){?> selected="selected"<?php } ?> value="1">Verizon</option>
-  												<option <?php if($result['carrier']==2){?> selected="selected"<?php } ?>value="2">AT&T</option>
-  												<option <?php if($result['carrier']==3){?> selected="selected"<?php } ?>value="3">Sprint</option>
-  												<option <?php if($result['carrier']==4){?> selected="selected"<?php } ?>value="4">T-Mobile</option>
+											<select>
+  												<option <?php if($result['carrier']==0){?> selected="selected"<?php } ?> value="1">Verizon</option>
+  												<option <?php if($result['carrier']==1){?> selected="selected"<?php } ?>value="2">AT&T</option>
+  												<option <?php if($result['carrier']==2){?> selected="selected"<?php } ?>value="3">Sprint</option>
+  												<option <?php if($result['carrier']==3){?> selected="selected"<?php } ?>value="4">T-Mobile</option>
 											</select>
 										</p>	
 									
 									
+									</div>
+								</div>
+							</div>	  
+							
+							<div class=".col-xs-6 .col-md-4">
+								<div class = "panel panel-default">
+									<div class = "panel-body">
+										<p>
+										My prefered email:  
+										<?php if(isset($result['email'])){ 
+											$curemail = $result['email']; 
+										} 
+										else{ 
+											$curemail = "$onidid@oregonstate.edu";
+										}
+										?>
+										<input type="text" class="form-control" name="email" id="email" value=<?php echo $curemail;?>>
+										</p>
 									</div>
 								</div>
 							</div>	  
@@ -130,7 +147,7 @@
 									else{
 									$text = "";
 									}
-		
+	
 									?>
 									<textarea class="form-control" rows="10" name = "description" id="description"><?php echo $text; ?></textarea>
 									<?php fclose($myfile); ?>

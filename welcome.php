@@ -13,7 +13,15 @@
 	$fstnm= htmlspecialchars($_POST["fn"], ENT_QUOTES);
 	$lstnm= htmlspecialchars($_POST["ln"], ENT_QUOTES);
 	$standing=$_POST["year"];
-	$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
+	$email=htmlspecialchars($_POST["email"], ENT_QUOTES);
+	if(is_numeric($_POST['phn'])){
+					
+		$phone= htmlspecialchars($_REQUEST["phn"], ENT_QUOTES);
+	}
+	else{
+		echo '<script> alert("Enter valid phone number or leave blank!");</script>';
+		
+	}
 	$desc= htmlspecialchars($_POST["description"], ENT_QUOTES);
 	$acc = $_POST["type"];
 	if(mkdir("./userfolders/$onidid",0777,true)){
@@ -22,8 +30,8 @@
 	echo "Here is what is in request: <br>";
 	$temp = serialize($_POST);
 	echo "$temp <br>";
-	if (!$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum,acctyp)
-	values('$onidid','$fstnm','$lstnm','$standing','$phone','$acc')"))
+	if (!$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum,acctyp,email)
+	values('$onidid','$fstnm','$lstnm','$standing','$phone','$acc', '$email')"))
 	{
 			echo 'test1 <BR>';
 			echo $fstnm;
@@ -35,7 +43,7 @@
 			echo $phone;
 			echo "<BR>";
 			$conn->query("update pinfo
-			set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone', acctyp='$acc'
+			set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone', acctyp='$acc', email='$email'
 			where uname='$onidid'");
 	}
 	
@@ -65,7 +73,6 @@
 		else{
 			echo "Sorry, your file is too large.";
 		}
-		
 		$myfile=fopen("./userfolders/$onidid/description.txt","w");
 		fwrite($myfile,$desc);
 		fclose($myfile);
