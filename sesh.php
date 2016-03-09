@@ -46,7 +46,7 @@
 			if($_SERVER['REQUEST_METHOD'] === 'POST'){
 				return "2";
 			}
-			else if($_SERVER['REQUEST_METHOD'] === 'POST'){
+			else if($_SERVER['REQUEST_METHOD'] === 'GET'){
 				return "1";
 			}
 			else{
