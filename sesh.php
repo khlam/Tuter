@@ -46,6 +46,9 @@
 			if($_SERVER['REQUEST_METHOD'] === 'POST'){
 				return "2";
 			}
+			else if($_SERVER['REQUEST_METHOD'] === 'POST'){
+				return "1";
+			}
 			else{
 				echo "<script>location.replace('" . $url . "');</script>";
 			}
