@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -26,7 +26,6 @@
 			$user= $_SESSION["onidid"] ;
 			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
 			$result_user = mysqli_fetch_array($fn);
-
 	?>
 
 
@@ -78,7 +77,6 @@
 												$class = "Graduate Student";
 											if($obj->cstanding == '6')
 												$class = "Other";
-
 											if($obj->acctyp == '2'){            
 										      	    echo "<tr>";
 										      	    echo "<td>";
@@ -95,10 +93,9 @@
 														echo "<img src='images/profile_default.gif' height = '80' width = '80' class='img-circle'/>";
 													}
 										      	    echo "</td>";
-
 										            echo "<td><h1>".htmlspecialchars($obj->fname)."</h1></td>"; 
 										            echo "<td>".htmlspecialchars($class)."</td>"; 
-										            echo "<td><form action=\"profile.php\" method=\"GET\"><input type=\"hidden\" name=\"user\" value=\"$obj->uname\" /><input type=\"submit\" value=\"View Profile\" /></form></td>";
+										            echo "<td><form action=\"profile.php\" method=\"GET\"><input type=\"hidden\" name=\"user\" value=\"$user\" /><input type=\"submit\" value=\"View Profile\" /></form></td>";
 										            echo "</tr>";
 										        }
 										    } 
