@@ -105,11 +105,12 @@
 										
 										</p>
 										<p>
-											<select>
-  												<option <?php if($result['carrier']==0){?> selected="selected"<?php } ?> value="1">Verizon</option>
-  												<option <?php if($result['carrier']==1){?> selected="selected"<?php } ?>value="2">AT&T</option>
-  												<option <?php if($result['carrier']==2){?> selected="selected"<?php } ?>value="3">Sprint</option>
-  												<option <?php if($result['carrier']==3){?> selected="selected"<?php } ?>value="4">T-Mobile</option>
+											<select name ="carrier" id = "carrier">
+  												<option <?php if($result['carrier']==0){?> selected="selected"<?php } ?>value="0">-select-</option>
+  												<option <?php if($result['carrier']==1){?> selected="selected"<?php } ?> value="1">Verizon</option>
+  												<option <?php if($result['carrier']==2){?> selected="selected"<?php } ?>value="2">AT&T</option>
+  												<option <?php if($result['carrier']==3){?> selected="selected"<?php } ?>value="3">Sprint</option>
+  												<option <?php if($result['carrier']==4){?> selected="selected"<?php } ?>value="4">T-Mobile</option>
 											</select>
 										</p>	
 									
