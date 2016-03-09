@@ -82,10 +82,12 @@
 		$uploadOk = 0;
 		
 	include("connect.php");
-	$onidid= $_POST["onidid"] ;
-	$phil= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
-	$result = mysqli_fetch_array($phil);
-	if($result['fname'] != "" && $result['lname'] != "" && $result['cstanding'] != ""){
+	$userInfo= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
+	$result = $userInfo->fetch_assoc();
+	echo '<br>';
+	echo $result['fname'];
+	echo '<br>';
+	if($result['fname'] && $result['lname'] && $result['cstanding']){
 		echo $result['fname'];
 		echo (", your info was succesfully uploaded to our Database!");
 		echo ("<br>Redirecting you now...");
