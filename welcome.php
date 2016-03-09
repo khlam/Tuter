@@ -46,8 +46,14 @@
 			$conn->query("update pinfo
 			set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone', acctyp='$acc', email='$email', carrier='$carrier'
 			where uname='$onidid'");
+
 	}
-	
+	//if the person is a tutor, enter them into the tuter list
+	if ($acc == 2)
+	{
+		echo "inside the else if <br>";
+		$conn->query("insert into tuters(uname) values('$onidid')");
+	}
 	mysqli_close($conn);
 	
 	$uploadOk = 1;
