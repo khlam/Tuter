@@ -23,15 +23,6 @@
 			$user = $_GET["user"];
 			$tuterinfo = $conn->query("SELECT uname FROM tuters WHERE uname= '$user'");
 			if ($tuterresult = mysqli_fetch_array($tuterinfo)) {
-				/*
-				$validUser = 0;
-				while ($obj = $tuterresult->fetch_object()) {
-					if ($obj->uname == $_GET["user"])
-						$validUser = 1;
-				}
-				if ($validUser)
-				{
-					*/
 				?>
 
 					<form action="handlerate.php" method="POST" >
@@ -42,17 +33,10 @@
 					</form>
 
 				<?php
-				/*
-				}
-				if(!$validUser)
-				{
-					echo "That was not a valid user! <br> Redirecting now.";
-				}
-				*/
 			}
 			else
 			{
-				echo "There was a error retrieving data from the database.";
+				echo "That is not a valid tutor.";
 			}
 			?>
 				
