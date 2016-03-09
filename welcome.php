@@ -8,7 +8,7 @@
 	<?php
 	include("connect.php");
 	
-	$onidid= $_SESSION["onidid"] ;
+	$onidid= $_POST["phil"];
 	echo ("<br>");
 	$fstnm= htmlspecialchars($_POST["fn"], ENT_QUOTES);
 	$lstnm= htmlspecialchars($_POST["ln"], ENT_QUOTES);
@@ -82,7 +82,7 @@
 		$uploadOk = 0;
 		
 	include("connect.php");
-	$onidid= $_SESSION["onidid"] ;
+	$onidid= $_POST["onidid"] ;
 	$phil= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
 	$result = mysqli_fetch_array($phil);
 	if($result['fname'] != "" && $result['lname'] != "" && $result['cstanding'] != ""){

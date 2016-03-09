@@ -50,6 +50,7 @@
 						</section>
 					</div>
 						<form action="welcome.php" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="phil" id="phil" value=<?php echo $onidid ?>>
 							<div class=".col-xs-6 .col-md-4">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
