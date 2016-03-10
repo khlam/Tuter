@@ -118,7 +118,7 @@ else{
 <?php mysqli_close($mysqli); ?>
 						
 <?php }else{ ?>
-	<META http-equiv="refresh" content="0;URL=tuter_list.php">
+	<META http-equiv="refresh" content="0;URL=sms_function.php">
 <?php } ?>
 
 

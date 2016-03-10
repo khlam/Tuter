@@ -8,7 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="source/tb.css" />
 	<link rel="stylesheet" type="text/css" href="source/buttons.css">
 </head>
-
+	<?php
+	include("sesh.php");
+		if (checkAuth(true) != "") {
+	?>
 	<?php 	
 			include("connect.php");
 			$onidid= $_SESSION["onidid"] ;
@@ -43,4 +46,7 @@
 
 		<?php mysqli_close($conn); ?>
 </body>
+<?php }else{ ?>
+	<META http-equiv="refresh" content="0;URL=ratetutor.php">
+<?php } ?>
 </html>

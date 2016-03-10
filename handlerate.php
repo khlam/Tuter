@@ -15,7 +15,8 @@
 	//if they say that they are not a tuter anymore, what to do with their data?
 	//look into there being 2 copies in csv file
 	//look into validation
-
+	include("sesh.php");
+		if (checkAuth(true) != "") {
 			include("connect.php");
 			$onidid=  "sprousem";//this needs to work later $_SESSION["onidid"] ;
 			$tuterID= $_POST["tutor"];
@@ -28,8 +29,6 @@
 			* This user should only be a tutor
 			* Make sure we correctly handle if they have rated
 			*/
-
-
 			//Assuming they haven't rated before
 			$numraters = $tuterresult["numraters"];
 			$rate = $tuterresult["rating"];
@@ -68,7 +67,6 @@
 				$newCSV = array();			
 				while (!feof($myfile))
 				{
-
 					$currentRow = fgetcsv($myfile);
 					echo "The current row is: ";
 					print_r($currentRow);
@@ -89,7 +87,6 @@
 						echo "numraters: $numraters <br>";
 						echo "Rating: $rating <br>";
 						echo "oldrating: $oldrating <br>";
-
 						$newRate = (($rate*$numraters)+$rating-$oldrating)/$numraters;
 						echo "The new rate should be $newRate <br>";
 						if (!$conn->query("UPDATE tuters SET rating='$newRate', numraters='$numraters' WHERE uname='$tuterID'"))
@@ -142,10 +139,10 @@
 	?>
 
 <?php
-
-
 echo "You gave user: ".$_POST["tutor"]." a ".$_POST["rate"]."!";
-
 ?>
+<?php }else{ ?>
+	<META http-equiv="refresh" content="0;URL=handlerate.php">
+<?php } ?>
 </body>
 </html>
