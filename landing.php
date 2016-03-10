@@ -49,8 +49,8 @@
 					</h2>
 					<p>
 					If this is your first time here, you should edit your profile. <br>
-					You can do this by clocking edit profile on the menu to the left.<br>
-					After setting up your profile, you can view other tuters' profiles and message them freely.
+					You can do this by clicking edit profile on the menu to the left.<br>
+					After setting up your profile, you can view other tutors' profiles and message them freely.
 					</p>
 					<h2>
 					How can we help you?
