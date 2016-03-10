@@ -35,17 +35,12 @@
 		<?php 
 		menu($result_user['fname'], $result_user['lname']);
 		?>
-		<div id="page-content-wrapper">
-	    	<div class="container-fluid">
 				<div id="index-wrap">
-
-					<div class="col-md-12">
-						<section id = "profile-edit-header">
-							<div class = "container">
-								<h1>Find a <div class= "boxed--emph">Tüter</div></h1>
-							</div>
-						</section>
-					</div>
+					<section id = "find-header">
+						<div class = "container-fluid">
+							Find a <div class= "boxed--emph">Tüter</div>
+						</div>
+					</section>
 
 					<div class = ".col-xs-4 .col-md-2">
 						<div class = "panel panel-default">
@@ -115,8 +110,6 @@
 					</div>
 
 				</div>
-	    	</div>
-	   	</div>
 	</div>
 			<script src="source/menu_class.js"></script>
 			<script src="source/main_menu.js"></script>

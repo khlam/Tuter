@@ -19,14 +19,14 @@ body {
     font-size: 18px;
     letter-spacing: 0.2px;
     color: #696969;
-    background-color: transparent;
+    background-color: inherit;
 }
 
 body h1,body h2,body h3,body h4,body h5 {
     font-family: arial,helvetica;
     font-style: normal;
     font-weight: 400;
-    color: transparent;
+    color: inherit;
 }
 
 body h1 {
@@ -375,7 +375,7 @@ body .success-text {
 .boxed{
 	font-size: 10em;
 	font-family: arial,helvetica;
-	border: 10px solid orange;
+	border: 10px #ff9800;
 	padding: 3px;
 	width: 700px;
 	color: #FFA500;
@@ -575,10 +575,18 @@ body .success-text {
 }
 
 #index-wrap #profile-edit-header{
-    padding: 50px;
-    background: #E8E8E8;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding: 0px;
+    background-color: #9c27b0;
+    width:100%;
+    height: 250px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    padding-top: 50px;
+    font-size: 80px;
+    color: #e1bee7;
+    position: relative;
 }
 
 #index-wrap #profile-edit-header h1{
@@ -596,19 +604,34 @@ body .success-text {
 }
 
 
-#index-wrap #profile-user{
+#index-wrap #profile-tutor{
     padding: 0px;
-    background-image: -ms-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
+    background-color: #3f51b5;
+    width:100%;
+    height: 250px;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 
-    background-image: -moz-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
+    font-size: 80px;
+    color: #c5cae9;
+    position: relative;
+}
 
-    background-image: -o-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
+#index-wrap #profile-student{
+    padding: 0px;
+    background-color: #f44336;
+    width:100%;
+    height: 250px;
+    margin-bottom: 80px;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 
-    background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(0, #FFFFFF), color-stop(100, #F7F7F7));
-
-    background-image: -webkit-radial-gradient(center, ellipse closest-corner, #FFFFFF 0%, #F7F7F7 100%);
-
-    background-image: radial-gradient(ellipse closest-corner at center, #FFFFFF 0%, #F7F7F7 100%);
+    font-size: 80px;
+    color: #ffcdd2;   
+    position: relative;
 }
 
 #index-wrap #profile-user h1{
@@ -616,7 +639,6 @@ body .success-text {
     color: #696969;
     float:left;
     position: center;
-    
 }
 
 #index-wrap #profile-user p{
@@ -625,3 +647,34 @@ body .success-text {
     float:left;
     position: center;   
 }
+
+#index-wrap #landing-header{
+    padding: 0px;
+    background-color:  #e91e63;
+    width:100%;
+    height: 250px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    padding-top: 50px;
+    font-size: 80px;
+    color: #f8bbd0;
+    position: relative;
+}
+
+#index-wrap #find-header{
+    padding: 0px;
+    background-color:  #009688;
+    width:100%;
+    height: 250px;
+    margin-bottom: 0px;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    padding-top: 50px;
+    font-size: 80px;
+    color: #b2dfdb;
+    position: relative;
+}
+

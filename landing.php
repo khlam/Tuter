@@ -8,64 +8,46 @@
 	<link rel="stylesheet" type="text/css" href="source/sidebar.css">
 	<link rel="stylesheet" type="text/css" href="source/tb.css" />
 	<link rel="stylesheet" type="text/css" href="source/buttons.css">
+
+	 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
-<body>
 
-	<?php include("sesh.php");?>
-		<?php 
-			if (checkAuth(true) != "") {
-		?>
 
-		<?php 	
-				include("connect.php");
-				$onidid= $_SESSION["onidid"] ;
-				$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
-				$result = mysqli_fetch_array($fn);
-
-		?>
-<div id ="wrapper">
-	<?php include 'menu.php';?>
+<?php include("sesh.php");?>
 	<?php 
-		menu($result['fname'], $result['lname']);
+		if (checkAuth(true) != "") {
 	?>
-	<div id="page-content-wrapper">
-	    <div class="container-fluid">
-			<div id="index-wrap">
-				<div class="col-lg-22">
-					<section id = "profile-edit-header">
-						<div class = "container">
-							<h1>Welcome back <div class= "boxed--emph"><?php echo $result['fname']?></div></h1>
-						</div>
-					</section>
-					<section id="page">
-					<p>There are __ alerts awaiting your attention.</p>
-						<p>
-						Your current tutor rating is __.
-						</p>
 
-						<p>
-						Currently you are tutoring __ students.
-						</p>
+	<?php 	
+			include("connect.php");
+			$user= $_SESSION["onidid"] ;
+			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
+			$result_user = mysqli_fetch_array($fn);
 
-						<p>
-						There are __ students requesting your help.
-						</p>
+	?>
 
-						<p>
-						Your next appointment for "CLASS" with "TUTOR/STUDENT NAME" is in "D:M:H:S".</br>APPOINTMENT TIME & DATE
-						</br>
-						TUTOR/STUDENT PROFILE LINK
-						</p>
-					</section>
+<body class="desktop">
+	<div id="wrapper">
+		<?php include 'menu.php';?>
+		<?php 
+		menu($result_user['fname'], $result_user['lname']);
+		?>
+				<div id="index-wrap">
+						<section id = "landing-header">
+							<div class = "container-fluid">
+								Welcome back <div class= "boxed--emph"> <?php echo $result_user['fname'] ?></div>
+							</div>
+						</section>					
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
-		<?php }else{ ?>
-		<META http-equiv="refresh" content="0;URL=landing.php">
+			<script src="source/menu_class.js"></script>
+			<script src="source/main_menu.js"></script>
+			<script src="source/bootstrap.js"></script>
+		<?php mysqli_close($conn); 
+		}else{ ?>
+		<META http-equiv="refresh" content="0;URL=profile.php">
 		<?php } ?>
-		<?php mysqli_close($conn); ?>
 </body>
 </html>

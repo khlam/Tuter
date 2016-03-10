@@ -42,63 +42,63 @@
 		menu($result_user['fname'], $result_user['lname']);
 		?>
 				<div id="index-wrap">
-						<div class="col-md-12">
-							<section id = "profile-user">
-								<div class = "container">
-									<h1>
-									<?php if ($result['fname'] != "")
-									{   ?>
-									<?php
-									$temp = imageCheck($user);
-									if($temp != "false"){
-									?>
-									<img src="userfolders/<?php echo $user;?>/profilepic<?php echo $temp;?>" height = "300" width = "300" class="img-circle"/>  </a>
-									<?php }else{ ?>
-									<img src="images/profile_default.gif" height = "300" width = "300" class="img-circle"/>  </a>
-									<?php
-									}?>
-									<div class= "boxed--emph"> <?php echo $result['fname'] ?>'s</div> profile
-									</h1>
-								</div>
-							</section>
-						</div>
-					<div class = "row">
-						<div class="col-md-4">
-							<section id = "profile-user">
-								<h1>I'm a 
+						<section id = <?php if($result['acctyp'] == 2){echo '"profile-tutor"';}else{echo'"profile-student"';}?>>
+							<div class = "container-fluid">
+								<h1>
+								<?php if ($result['fname'] != "")
+								{   ?>
+								<?php
+								$temp = imageCheck($user);
+								if($temp != "false"){
+								?>
+								<img src="userfolders/<?php echo $user;?>/profilepic<?php echo $temp;?>" height = "300" width = "300" class="img-circle"/>  </a>
+								<?php }else{ ?>
+								<img src="images/profile_default.gif" height = "300" width = "300" class="img-circle"/>  </a>
+								<?php
+								}?>
+								<div class= "boxed--emph"> <?php echo $result['fname'] ?></div>
+
+								
 								<?php 
 									if($result['acctyp'] == 2){		
-										echo '<div class= "boxed--emph">tutor</div></h1>';
+										echo 'tutor';
 									}else
 									{
-										echo'<div class= "boxed--emph">student</div></h1>';
-									}
-								?>
+										echo'student';
+								}?>
+	
 								</h1>
-							</section>
-						</div>
-						
+							</div>
+						</section>
+					</div>
+
+					<div class = "row">
 						<?php 
 						if($result['acctyp'] == 2){
 						?>
-						<div class="col-md-4">
+						<div class="col-md-2">
 							<section id = "profile-user">
 								<h1>Rating</h1>
 							</section>
 						</div>
-
+					</div>
+					<div class = "row">
 						<div class="col-md-4">
+							<div class = "container-fluid">
 								<section id = "page">
 									<h2><a href="#"><button class="button button--ujarak button--size-s button--border-medium button--text-thick" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Contact Me</button></a>
-										<div class="collapse" id="collapseExample">
-											<div class="well">
-											Code for cool feature goes here
-											</div>
-										</div>
 									</h2>
 								</section>
+							</div>
 						</div>
 						<?php }?>
+					</div>
+					<div class ="row">
+						<div class="collapse" id="collapseExample">
+							<div class="well">
+							Code for cool feature goes here
+							</div>
+						</div>
 					</div>
 
 					<div class=".col-xs-6 .col-md-4">
