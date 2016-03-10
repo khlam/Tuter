@@ -50,7 +50,7 @@
 								if ($rating['numraters'] > '0')
 								{
 									echo 'Rated ';
-									echo $rating['rating']."/10 </br> By ";
+									echo round($rating['rating'],2)."/10 </br> By ";
 									echo $rating['numraters'];
 									if ( $rating['numraters'] == 1)
 									{
