@@ -1,0 +1,1 @@
+Hello, I was in charge of everything session related to this project, along with various bug handling in html, javascript, php, etc. I also tested &#039;almost&#039; all the text fields for script injections.

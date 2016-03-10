@@ -43,11 +43,12 @@
 		menu($result_user['fname'], $result_user['lname']);
 		?>
 				<div id="index-wrap">
+
 						<section id = <?php if($result['acctyp'] == 2){echo '"profile-tutor"';}else{echo'"profile-student"';}?>>
-							<div class = "container-fluid">
+							<div class = "container">
 								<p>
 								<?php
-								if ($rating['numraters'] > '0')
+								if ($result['acctyp'] == 2 and $rating['numraters'] > '0')
 								{
 									echo 'Rated ';
 									echo round($rating['rating'],2)."/10 </br> By ";
@@ -88,16 +89,16 @@
 										echo'student';
 								}?>
 	
-								</h1>
 							</div>
 						</section>
+						
 					</div>
 
 					<div class = "row">
 						<?php 
 						if($result['acctyp'] == 2){
 						?>
-						<div class="col-md-8">
+						<div class=".col-xs-6 .col-md-4">
 							<div class = "container-fluid">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
@@ -113,7 +114,7 @@
 						</div>
 					</div>
 					<div class = "row">
-						<div class="col-md-4">
+						<div class=".col-xs-6 .col-md-4">
 							<div class = "container-fluid">
 								<section id = "page">
 									<h2><a href="#"><button class="button button--ujarak button--size-s button--border-medium button--text-thick" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Contact Me</button></a>
