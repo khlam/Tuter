@@ -18,7 +18,7 @@
 	include("sesh.php");
 		if (checkAuth(true) != "") {
 			include("connect.php");
-			$onidid=  "sprousem";//this needs to work later $_SESSION["onidid"] ;
+			$onidid= $_SESSION["onidid"] ;
 			$tuterID= $_POST["tutor"];
 			$userInfo= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
 			$result = mysqli_fetch_array($userInfo);
@@ -141,8 +141,10 @@
 <?php
 echo "You gave user: ".$_POST["tutor"]." a ".$_POST["rate"]."!";
 ?>
+<META http-equiv="refresh" content="0; URL=profile.php?user=<?php echo $tuterID?>">
+
 <?php }else{ ?>
-	<META http-equiv="refresh" content="0;URL=handlerate.php">
+		<META http-equiv="refresh" content="0; URL=profile.php?user= <?php echo $tuterID?>">
 <?php } ?>
 </body>
 </html>

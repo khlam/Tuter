@@ -22,17 +22,18 @@
 	?>
 
 	<?php 	
-			include("connect.php");
-			$user= $_SESSION["onidid"] ;
-			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
-			$result_user = mysqli_fetch_array($fn);
-
+		include("connect.php");
+		$user= $_SESSION["onidid"] ;
+		$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
+		$result_user = mysqli_fetch_array($fn);
 	?>
 
 	<?php
 	 $user = $_GET['user'];
 	 $phil= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
 	 $result = mysqli_fetch_array($phil);
+	 $temp = $conn->query("SELECT * FROM tuters WHERE uname='$user'");
+	 $rating = mysqli_fetch_array($temp);
 	?>
 
 <body class="desktop">
@@ -44,7 +45,28 @@
 				<div id="index-wrap">
 						<section id = <?php if($result['acctyp'] == 2){echo '"profile-tutor"';}else{echo'"profile-student"';}?>>
 							<div class = "container-fluid">
-								<h1>
+								<p>
+								<?php
+								if ($rating['numraters'] != '0')
+								{
+									echo 'Rated ';
+									echo $rating['rating']."/10 </br> By ";
+									echo $rating['numraters'];
+									if ( $rating['numraters'] == 1)
+									{
+										echo " student";
+									}else
+									{
+										echo " students";
+									}
+								}
+								else
+								{
+									echo '  ';
+								}
+								?>
+								
+								</p>
 								<?php if ($result['fname'] != "")
 								{   ?>
 								<?php
@@ -57,7 +79,6 @@
 								<?php
 								}?>
 								<div class= "boxed--emph"> <?php echo $result['fname'] ?></div>
-
 								
 								<?php 
 									if($result['acctyp'] == 2){		
@@ -76,12 +97,12 @@
 						<?php 
 						if($result['acctyp'] == 2){
 						?>
-						<div class="col-md-2">
+						<div class="col-md-8">
 							<div class = "container-fluid">
 								<div class = "panel panel-default">
 									<div class = "panel-body">
 									<form action="handlerate.php" method="POST" >
-										Please rate 
+										Rate <?php echo $result['fname'] ?>'s performance. (1=Poor, 10 = Great!)
 										<input type="number" name="rate" id="rate" max="10" min="1"></input>
 										<input type="hidden" name="tutor" id="tutor" value="<?php echo "$user"; ?>"></input>
 										<input type="submit"></input>
