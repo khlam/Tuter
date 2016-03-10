@@ -15,13 +15,16 @@
 	 $user = $_GET['user'];
 	 $phil= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
 	 $result = mysqli_fetch_array($phil);
+
+
 	?>
 
 
 
 <?php
-	$carrier = $result_user['carrier'];
-	echo "$carrier";
+	$carrier = $result['carrier'];
+	
+	
 	if($carrier == '0'){
 		$carrier = "vtext.com"; } 
 	if($carrier == '1'){
@@ -37,13 +40,14 @@ if (isset($_POST['g-recaptcha-response'])) {
   
   $custom_msg = htmlspecialchars($_REQUEST['smsMessage'], ENT_QUOTES);
   $message = "Hello, I would like to be tutored by you (contact info here)"; 
-  $to = $result_user['phonenum'] . '@' . $carrier;
+  $to = $result['phonenum'] . '@' . $carrier;
  
 } 
 		
 if(isset($_REQUEST['cbox'])){
 	if($captcha){ 
 		$check = @mail( $to, '', $message . " " . $custom_msg );
+		
 	}
 	else{
 		print 'Please check the captcha';
@@ -66,7 +70,7 @@ else{
 
 <head>
    	<meta charset="UTF-8">
-	<link rel="stylesheet" href="sms_function.css">
+	
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 
@@ -90,7 +94,9 @@ else{
 
 <div id="container">
     <h1>Contact your tutor</h1>
-    <form action="" method="post">
+    <p>A default message will be sent upon hitting send containing your email, if you provided it. Add additional info by including a custom message.</p>    
+
+<form action="" method="post">
      <ul>
       
 	<li>
@@ -118,7 +124,7 @@ else{
 <?php mysqli_close($mysqli); ?>
 						
 <?php }else{ ?>
-	<META http-equiv="refresh" content="0;URL=sms_function.php">
+	<META http-equiv="refresh" content="0;URL=tuter_list.php">
 <?php } ?>
 
 
