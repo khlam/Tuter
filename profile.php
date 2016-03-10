@@ -117,19 +117,13 @@
 						<div class=".col-xs-6 .col-md-4">
 							
 							<section id = "page">
-							 	<?php echo "<form action=\"sms_function.php\" method=\"GET\"><input type=\"hidden\" name=\"user\" value=\"$user\" /><button type=\"submit\" class=\"button button--ujarak button--size-s button--border-medium button--text-thick\" data-toggle=\"collapse\" data-target=\"#collapseExample\" aria-expanded=\"false\" aria-controls=\"collapseExample\">Contact Me</button></form>"; ?>
+							 	<?php echo "<form action=\"sms_function.php\" method=\"GET\"><input type=\"hidden\" name=\"user\" value=\"$user\" /><button type=\"submit\" class=\"button button--ujarak button--size-s button--border-medium button--text-thick\">Contact Me</button></form>"; ?>
 							</section>
 							
 						</div>
 						<?php }?>
 					</div>
-					<div class ="row">
-						<div class="collapse" id="collapseExample">
-							<div class="well">
-							Code for cool feature goes here
-							</div>
-						</div>
-					</div>
+
 
 					<div class=".col-xs-6 .col-md-4">
 						<div class = "panel panel-default">
