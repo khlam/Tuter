@@ -47,7 +47,7 @@
 							<div class = "container-fluid">
 								<p>
 								<?php
-								if ($rating['numraters'] != '0')
+								if ($rating['numraters'] > '0')
 								{
 									echo 'Rated ';
 									echo $rating['rating']."/10 </br> By ";
