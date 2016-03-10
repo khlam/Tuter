@@ -44,8 +44,8 @@
 			<div class="col-md-4">
 				<div class = "panel-body">
 					<p>
-				    	First Name* : <input type="text" name="fn" id="fn" value=<?php echo $result['fname']?> required>
-						</br>Last Name* : <input type="text" name="ln" id="ln" value=<?php echo $result['lname']?> required>
+				    	First Name* : <input type="text" name="fn" id="fn" value="<?php echo $result['fname']?>"required>
+						</br>Last Name* : <input type="text" name="ln" id="ln" value="<?php echo $result['lname']?>"required>
 						</br></br>
 					</p>
 					<p>

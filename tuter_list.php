@@ -25,7 +25,7 @@
 			include("connect.php");
 			$user= $_SESSION["onidid"] ;
 			$fn= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
-			$result_user = mysqli_fetch_array($fn);
+			$result_user = $fn->fetch_assoc();
 	?>
 
 
@@ -41,7 +41,24 @@
 							Find a <div class= "boxed--emph">Tüter</div>
 						</div>
 					</section>
-
+					
+					
+					<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+					<script type="text/javascript">
+					function searchq(){
+						var searchtext = $("input[name='search']").val();
+						$.post("search.php",{searchVal: searchtext}, function(output) {
+							$("#output").html(output);
+						});
+					}
+					</script>
+					<form action="tuter_list.php" method="post">
+						<input type="text" name="search" placeholder="Search..." onkeydown="searchq();">
+						<input type="submit" value=">>">
+					</form>
+					<div id="output">
+					</div>
+					
 					<div class = ".col-xs-4 .col-md-2">
 						<div class = "panel panel-default">
 							<div class = "panel-body">
