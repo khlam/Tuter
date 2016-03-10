@@ -77,9 +77,18 @@
 						if($result['acctyp'] == 2){
 						?>
 						<div class="col-md-2">
-							<section id = "profile-user">
-								<h1>Rating</h1>
-							</section>
+							<div class = "container-fluid">
+								<div class = "panel panel-default">
+									<div class = "panel-body">
+									<form action="handlerate.php" method="POST" >
+										Please rate 
+										<input type="number" name="rate" id="rate" max="10" min="1"></input>
+										<input type="hidden" name="tutor" id="tutor" value="<?php echo "$user"; ?>"></input>
+										<input type="submit"></input>
+									</form>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class = "row">
