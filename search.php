@@ -19,14 +19,14 @@
 			$qy = $conn->query("SELECT * FROM pinfo WHERE fname LIKE '%$searchdata%' AND acctyp='2'");
 			$fill = $qy->num_rows;
 			if($fill == 0){
-				$output =  "No results found";
+				$output =  "No Tutors found by that name.";
 			}
 			else{
-				$temp1='<td><form action=profile.php method=GET><input type=hidden name=user value=';
-				$temp2='><input type=submit value=Here></form></td>';
+				$temp1='<form action=profile.php method=GET><input type=hidden name=user value=';
+				$temp2='><input type=submit value=Profile></form>';
 				while($row = $qy->fetch_assoc()){
-				
-				$output .= '<div>'.$row['fname'].' is a tuter! Message them:'.$temp1.$row['uname'].$temp2.'</div>'.'<br>';
+				$output .= 
+				'<td>'.$row['fname'].'</td><td>'.$temp1.$row['uname'].$temp2.'</td></td>';
 			}
 		}
 	}

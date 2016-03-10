@@ -42,12 +42,22 @@
 							</div>
 						</section>					
 				</div>
-			<script src="source/menu_class.js"></script>
-			<script src="source/main_menu.js"></script>
-			<script src="source/bootstrap.js"></script>
+
+				<div class=".col-xs-6 .col-md-4">
+					<h1>
+					Site Description here
+					</h1>
+					<p>
+					Site text here
+					</p>
+				</div>
+		<script src="source/menu_class.js"></script>
+		<script src="source/main_menu.js"></script>
+		<script src="source/bootstrap.js"></script>
 		<?php mysqli_close($conn); 
 		}else{ ?>
 		<META http-equiv="refresh" content="0;URL=profile.php">
 		<?php } ?>
+	</div>
 </body>
 </html>

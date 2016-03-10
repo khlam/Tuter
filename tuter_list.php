@@ -43,22 +43,28 @@
 					</section>
 					
 					
-					<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-					<script type="text/javascript">
-					function searchq(){
-						var searchtext = $("input[name='search']").val();
-						$.post("search.php",{searchVal: searchtext}, function(output) {
-							$("#output").html(output);
-						});
-					}
-					</script>
-					<form action="tuter_list.php" method="post">
-						<input type="text" name="search" placeholder="Search..." onkeydown="searchq();">
-					</form>
-					<div id="output">
-					
+					<div class = "col-md-6">
+						<div class = "panel panel-default">
+							<div class = "panel-body">
+								<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+								<script type="text/javascript">
+								function searchq(){
+									var searchtext = $("input[name='search']").val();
+									$.post("search.php",{searchVal: searchtext}, function(output) {
+										$("#output").html(output);
+									});
+								}
+								</script>
+								<form action="tuter_list.php" method="post">
+									<input type="text" class = "form-control" name="search" placeholder="Search..." onkeydown="searchq();">
+								</form>
+								<div id="output">
+								</div>
+							</div>
+						</div>
 					</div>
-					
+
+
 					<div class = ".col-xs-4 .col-md-2">
 						<div class = "panel panel-default">
 							<div class = "panel-body">
