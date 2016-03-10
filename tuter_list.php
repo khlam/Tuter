@@ -54,9 +54,9 @@
 					</script>
 					<form action="tuter_list.php" method="post">
 						<input type="text" name="search" placeholder="Search..." onkeydown="searchq();">
-						<input type="submit" value=">>">
 					</form>
 					<div id="output">
+					
 					</div>
 					
 					<div class = ".col-xs-4 .col-md-2">

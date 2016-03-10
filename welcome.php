@@ -28,21 +28,10 @@
 	if(mkdir("./userfolders/$onidid",0777,true)){
 		echo("directory should be made");
 	}
-	echo "Here is what is in request: <br>";
-	$temp = serialize($_POST);
-	echo "$temp <br>";
+	
 	if (!$conn->query("insert into pinfo(uname,fname,lname,cstanding,phonenum,acctyp,email,carrier)
 	values('$onidid','$fstnm','$lstnm','$standing','$phone','$acc', '$email', '$carrier')"))
 	{
-			echo 'test1 <BR>';
-			echo $fstnm;
-			echo "<BR>";
-			echo $lstnm;
-			echo "<BR>";
-			echo $standing;
-			echo "<BR>";
-			echo $phone;
-			echo "<BR>";
 			$conn->query("update pinfo
 			set fname='$fstnm', lname='$lstnm', cstanding='$standing', phonenum='$phone', acctyp='$acc', email='$email', carrier='$carrier'
 			where uname='$onidid'");
@@ -51,7 +40,6 @@
 	//if the person is a tutor, enter them into the tuter list
 	if ($acc == 2)
 	{
-		echo "inside the else if <br>";
 		$conn->query("insert into tuters(uname) values('$onidid')");
 	}
 	mysqli_close($conn);
@@ -90,9 +78,6 @@
 	include("connect.php");
 	$userInfo= $conn->query("SELECT * FROM pinfo WHERE uname='$onidid'");
 	$result = $userInfo->fetch_assoc();
-	echo '<br>';
-	echo $result['fname'];
-	echo '<br>';
 	if($result['fname'] && $result['lname'] && $result['cstanding']){
 		echo $result['fname'];
 		echo (", your info was succesfully uploaded to our Database!");
@@ -105,7 +90,7 @@
 		
 	mysqli_close($conn);
 	?>
-		<META http-equiv="refresh" content="3;URL=edit_profile.php">
+		<META http-equiv="refresh" content="1;URL=edit_profile.php">
 	<?php } else{ ?>
 		<META http-equiv="refresh" content="0;URL=welcome.php">
 		<?php } ?>
