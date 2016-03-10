@@ -1,0 +1,32 @@
+#container {
+ width: 600px;
+ 
+ border: 3px solid #ccc;
+ -webkit-border-radius: 10px;
+ -moz-border-radius: 10px;
+ -ms-border-radius: 10px;
+ border-radius: 10px;
+ border-top: 3px solid #ddd;
+ padding: 1em 2em;
+ margin: 0 auto;
+
+}
+ 
+ul {
+ list-style: none;
+ padding: 0;
+}
+ 
+ul > li {
+ padding: 0.13em 1.2em
+}
+ 
+label {
+ display: block;
+ float: left;
+ width: 120px;
+}
+ 
+input, textarea {
+ font-family: Georgia, Serif;
+}

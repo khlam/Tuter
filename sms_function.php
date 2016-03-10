@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <?php include("sesh.php");?>
 	<?php 
 		if (checkAuth(true) != "") {
@@ -12,8 +12,8 @@
 	?>
 
 	<?php
-	 $user = $_GET['user'];
-	 $phil= $conn->query("SELECT * FROM pinfo WHERE uname='$user'");
+	 $current = $_GET['user'];
+	 $phil= $conn->query("SELECT * FROM pinfo WHERE uname='$current'");
 	 $result = mysqli_fetch_array($phil);
 
 
@@ -22,6 +22,7 @@
 
 
 <?php
+	error_reporting(0);
 	$carrier = $result['carrier'];
 	
 	
@@ -35,25 +36,28 @@
 		$carrier = "tmomail.net"; }
 	
 	
-if (isset($_POST['g-recaptcha-response'])) {
+
   $captcha = $_POST['g-recaptcha-response'];
-  
+  $to = $result['phonenum'] . '@' . $carrier;
   $custom_msg = htmlspecialchars($_REQUEST['smsMessage'], ENT_QUOTES);
   $message = "Hello, I would like to be tutored by you (contact info here)"; 
-  $to = $result['phonenum'] . '@' . $carrier;
+  
  
-} 
+ 
 		
 if(isset($_REQUEST['cbox'])){
 	if($captcha){ 
-		$check = @mail( $to, '', $message . " " . $custom_msg );
+		
+		$check = @mail( $to, '', $message . " " . $custom_msg);
 		
 	}
 	else{
 		print 'Please check the captcha';
 	}
 }
-else{
+else if($_REQUEST['sendMessage'])
+{
+	
 	$check = @mail( $to, '', $message);	
 }
 
@@ -66,13 +70,22 @@ else{
 
 ?>
 
-<!DOCTYPE html>
 
-<head>
+
+<head xmlns="http://www.w3.org/1999/xhtml">
    	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
+
+	<link rel="stylesheet" type="text/css" href="source/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="source/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="source/tb.css" >
+	<link rel="stylesheet" type="text/css" href="source/buttons.css">
+	<link rel="stylesheet" type="text/css" href="sms_function2.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 
@@ -82,7 +95,31 @@ else{
 
 
 </head>
-  <body>
+  <body class="desktop">
+	<div id="wrapper">
+		<?php include 'menu.php';?>
+		<?php 
+		menu($result_user['fname'], $result_user['lname']);
+		?>
+				<div id="index-wrap">
+						<section id = "landing-header">
+							
+						</section>					
+				</div>
+			<script src="source/menu_class.js"></script>
+			<script src="source/main_menu.js"></script>
+			<script src="source/bootstrap.js"></script>
+	
+
+
+
+
+
+
+	</div>
+
+
+
 	<script type="text/javascript">
 		function ShowHide(cbox){
 			var dvSMS = document.getElementById("dvSMS");
@@ -92,7 +129,7 @@ else{
 		}
 	</script>
 
-<div id="container">
+<div id="container" align = "center">
     <h1>Contact your tutor</h1>
     <p>A default message will be sent upon hitting send containing your email, if you provided it. Add additional info by including a custom message.</p>    
 
@@ -120,6 +157,7 @@ else{
 </ul>
 	</form>
   </div>
+	
  </body>
 <?php mysqli_close($mysqli); ?>
 						
